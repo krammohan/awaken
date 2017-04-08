@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <%= link_to "Sign In with Google", user_omniauth_authorize_path(:google_oauth2)%>
     <%= yield %>
   </body>
 </html>
