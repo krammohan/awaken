@@ -82,4 +82,4 @@ production:
   <<: *default
   database: awaken_production
   username: awaken
-  password: <%= ENV['AWAKEN_DATABASE_PASSWORD'] %>
+  password: ENV['AWAKEN_DATABASE_PASSWORD']

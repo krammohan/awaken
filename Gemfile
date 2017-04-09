@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 
+gem 'devise', github: 'twalpole/devise', branch: 'master'
+gem 'omniauth-google-oauth2'
+gem 'google-api-client', '0.8.2', require: 'google/api_client'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use postgresql as the database for Active Record
@@ -30,9 +34,15 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'pubnub'
+
+gem 'sidekiq'
+gem 'sinatra', github: 'sinatra/sinatra'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
