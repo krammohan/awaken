@@ -5,21 +5,26 @@ class UsersController < ApplicationController
 	end
 
   def update
-    @user = current_user.update(user_params)
+		p "*" * 50
+		p user_params
+		p "*" * 50
+		p params
+    update_status = current_user.update(user_params)
+		flash.notice = "ALARM UPDATED THO"
 
     respond_to do |format|
-        AlarmQueue.perform_now(@user.id)
-        render text: "ALARM SETTING HAS BEEN ADDED TO THE QUEUE"
-        # format.html { redirect_to @user, notice: 'Alarm was successfully updated.' }
-        # format.json { render :show, status: :created, location: @user }
+        AlarmQueue.perform_now(current_user.id)
+        # render text: "ALARM SETTING HAS BEEN ADDED TO THE QUEUE"
+        format.html { redirect_to current_user, notice: 'Alarm was successfully updated.' }
+        format.json { render :show, status: :created, location: current_user }
     end
   end
 
 end
 
 
-private 
+private
 
 def user_params
-  params.require(:user).permit(:time)
+  params.require(:user).permit(:time, :weather)
 end
