@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170408192026) do
     t.string   "provider"
     t.string   "access_token"
     t.string   "refresh_token"
+    t.time     "time"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false
