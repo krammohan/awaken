@@ -5,9 +5,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-	user = User.find_for_google_oauth2(env["omniauth.auth"])
+	user = User.from_omniauth(env["omniauth.auth"])
 	session[:user_id] = user.id
-	redirect_to "home/index"
+	redirect_to "user#show"
   end
 
   def destroy
