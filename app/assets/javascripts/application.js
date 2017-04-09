@@ -14,3 +14,30 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// App.globals.name_of_user = <%= current_user.name %>
+
+$(document).ready(function(){
+	weatherHandler();
+})
+        
+ var weatherHandler = function(){
+        var api_key =  "9d3f2195def4857f73b59e548d2b7c4f";
+    	$.getJSON("http://api.openweathermap.org/data/2.5/weather?zip=95014,us&appid=" + api_key,function(result){
+
+        var kelvin = result.main.temp;
+        var fahrenheit = ((kelvin)*(9/5))-459.67;
+        var fahrenheit_rounded = Math.round(fahrenheit*10)/10;
+
+        var wind = Math.round((result.wind.speed/0.44704)*10)/10;
+        
+        var message = (result.name+"<br>"+ fahrenheit_rounded + "°F<br>"+wind+" mph<br>"+result.weather[0].description);
+
+
+
+        $('#weather').append(message);
+        $('#weather-icon').attr("src", "http://openweathermap.org/img/w/"+result.weather[0].icon+".png");
+        
+        });
+    
+    };
