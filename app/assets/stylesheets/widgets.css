@@ -1,0 +1,30 @@
+#stuff {
+	/*background: image-url('/app/assets/images/morning.jpeg') no-repeat;*/
+	background-image: url('/assets/morning.jpg');
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-attachment: fixed;
+	background-position:center center;
+}
+
+#weather{
+	color: red;
+}
+
+#weather-widget {
+	border-radius: 25px;
+	padding: 20px;
+	display: none;
+	vertical-align: middle;
+	background: darkgray;
+	width: 60vw;
+	height: 40vw;
+	margin: 0 auto;
+	left: 0%;
+	position:relative;
+	top: 125px;
+}
+
+/*.weather-widget {
+	background: black;
+}*/
