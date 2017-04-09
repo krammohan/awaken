@@ -38,16 +38,20 @@
 
 							 </div>
 							 <div class="card-action">
-								 <div class="switch" unchecked><label>Off<input name="user[weather]" type="checkbox" checked><span class="lever"></span>On</label></div>
-								 <br>
-								 <div class="switch">
-									 <label>
-										 Off
-										 <input type="checkbox" id="mycheckbox" name="user[weather]">
-										 <span class="lever"></span>
-										 On
-									 </label>
-								 </div>
+								 <% if @user.weather %>
+								 		<%=@user.email %>
+									 <div class="switch" unchecked><label>Off<input name="user[weather]" id="switch-is-on" type="checkbox" checked><span class="lever"></span>On</label></div>
+									 <br>
+								 <% else %>
+									 <div class="switch">
+										 <label>
+											 Off
+											 <input type="checkbox" id="mycheckbox" name="user[weather]">
+											 <span class="lever"></span>
+											 On
+										 </label>
+									 </div>
+								<% end %>
 							 </div>
 						 </div>
 					 </div>
