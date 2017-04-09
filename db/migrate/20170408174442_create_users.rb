@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :provider
       t.string :access_token
       t.string :refresh_token
+      t.time :time
 
       t.timestamps
     end
