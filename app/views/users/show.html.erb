@@ -1,5 +1,7 @@
 <% if @user %>
-	Its Logged in <%= @user.username %>
+	Its Logged in <%= current_user.username %>
+	
 <%else %>
 	NOT logged in
+
 <%end %>

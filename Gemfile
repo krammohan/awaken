@@ -4,7 +4,10 @@ gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 gem 'devise', github: 'twalpole/devise', branch: 'master'
 gem 'omniauth-google-oauth2'
-gem 'google-api-client', '0.8.2', require: 'google/api_client'
+# gem 'google-api-client', '~> 0.9', require: 'google/apis/calendar_v3'
+# gem 'google_calendar'
+gem 'google-api-client', :require => 'google/api_client'
+# gem 'google-api-client', '~> 0.9', require: 'google/apis/calendar_v3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use postgresql as the database for Active Record
