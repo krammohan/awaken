@@ -21,6 +21,7 @@
 // App.globals.name_of_user = <%= current_user.name %>
 
 $(document).ready(function(){
+	$('div.hidden').fadeIn(2500);
 	weatherHandler();
 })
         
