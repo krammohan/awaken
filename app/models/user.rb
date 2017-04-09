@@ -8,6 +8,15 @@ class User < ApplicationRecord
     self.find_user auth
   end
 
+  def check_and_construct
+    if self.calendar
+      Calendar.construct(self)#.whatever info is needed for cal API
+    end
+    if self.weather
+      Weather.construct(self.zip)
+    end
+  end
+
   private
 
   def self.find_user auth
@@ -22,8 +31,5 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]
     end
   end
-
-
-
 
 end
