@@ -1,0 +1,11 @@
+#stuff {
+	/*background: image-url('/app/assets/images/morning.jpeg') no-repeat;*/
+	background-image: url('/assets/morning.jpg');
+	background-repeat:no-repeat;
+	background-size:cover;
+
+}
+
+#weather{
+	color: red;
+}
