@@ -13,7 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require materialize-sprockets
+//= require materialize_datepicker
 //= require_tree .
+
 
 // App.globals.name_of_user = <%= current_user.name %>
 
@@ -41,3 +44,4 @@ $(document).ready(function(){
         });
     
     };
+

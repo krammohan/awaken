@@ -9,6 +9,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :refresh_token
       t.time :time
       t.boolean :weather, default: :false
+      t.string :zip
 
       t.timestamps
     end
