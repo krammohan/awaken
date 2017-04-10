@@ -8,13 +8,12 @@ class User < ApplicationRecord
     self.find_user auth
   end
 
-  def check_and_construct
-    if self.calendar
-      Calendar.construct(self)#.whatever info is needed for cal API
-    end
+  def construct_widgets
+    html_string = ""
     if self.weather
-      Weather.construct(self.zip)
+      html_string += Weather.get_weather(self.zip)
     end
+    self.content = html_string
   end
 
   def toggle_weather
