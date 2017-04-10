@@ -6,14 +6,7 @@
   var weather = "<%= @weather %>"
 </script>
 <body id="stuff">
-	<div id="widget-container">
-		<div id="weather-widget" class= "hidden" style="background-color:rgba(0, 0, 0, 0.6);">
-		  <h3 text-align="center" color="white">Weather <img id="weather-icon" src="" height="60" width="60"></img></h3>
-		  <p id="weather">
-		  </p>
-
-      
-
-		</div>
+	<div class="widget-container">
+    <%= WeatherWidget.get_weather('84103') %>
 	</div>
 </body>
