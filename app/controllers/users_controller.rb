@@ -20,11 +20,15 @@ class UsersController < ApplicationController
     end
   end
 
-end
+	def change_weather
+		current_user.toggle_weather
+	end
 
 
 private
 
 def user_params
   params.require(:user).permit(:time, :weather)
+end
+
 end
