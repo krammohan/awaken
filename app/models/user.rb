@@ -17,6 +17,11 @@ class User < ApplicationRecord
     self.save
   end
 
+  def reset_content
+    self.content = "<div></div>"
+    self.save
+  end
+
   def toggle_weather
     if self.weather
       self.weather = false
