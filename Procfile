@@ -1,0 +1,1 @@
+reportworker: bundle exec sidekiq -c 1
