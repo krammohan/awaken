@@ -16,3 +16,5 @@ class SessionsController < ApplicationController
   end
 
 end
+
+# DO NOT CHANGE

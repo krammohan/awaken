@@ -3,7 +3,7 @@
 @import url("font-awesome.min.css");
 
 
-body.is-loading *, body.is-loading *:after, body.is-loading *:before {
+.is-loading *, .is-loading *:after, .is-loading *:before {
   -moz-transition: none !important;
   -webkit-transition: none !important;
   -ms-transition: none !important;
@@ -28,16 +28,16 @@ body.is-loading *, body.is-loading *:after, body.is-loading *:before {
 
 
 
-body.homepage #header {
+.homepage #header {
   height: 100vh;
   min-height: 40em;
 }
 
-body.homepage #header h1 {
+.homepage #header h1 {
   font-size: 4em;
 }
 
-body.homepage #header:after {
+.homepage #header:after {
   content: '';
   background: #1C0920;
   display: block;
@@ -57,7 +57,7 @@ body.homepage #header:after {
   transition-delay: 0.5s;
 }
 
-body.homepage.is-loading #header:after {
+.homepage.is-loading #header:after {
   opacity: 1;
 }
 

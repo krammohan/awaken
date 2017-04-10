@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :sessions
-  resources :users
-  resources :widgets
+  
+  resources :users do
+    resources :widgets
+  end
 
   put 'users/:id/weather' => 'users#change_weather', as: "users_weather"
   put 'users/:id/maps' => 'users#change_maps', as: "users_maps"

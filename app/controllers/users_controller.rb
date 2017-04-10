@@ -24,7 +24,6 @@ class UsersController < ApplicationController
     current_user.toggle_maps
   end
 
-
 private
 
   def user_params
@@ -32,5 +31,4 @@ private
   end
 
 end
-
 
