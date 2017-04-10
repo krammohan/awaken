@@ -35,7 +35,7 @@ $(document).ready(function(){
 
         var wind = Math.round((result.wind.speed/0.44704)*10)/10;
         
-        var message = (result.name+"<br>"+ fahrenheit_rounded + "°F<br>"+wind+" mph<br>"+result.weather[0].description);
+        var message = (result.name+"<br><h5>"+ fahrenheit_rounded + "°F<br>"+wind+" mph<br>"+result.weather[0].description+"</h5>");
 
 
 
