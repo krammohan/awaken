@@ -18,7 +18,7 @@ class AlarmQueue < ActiveJob::Base
     #       end
     #     puts "GOOOOODBYE"
     #   end
-    # end
+    end
   end
   private
     def weekend?
