@@ -17,6 +17,15 @@ class User < ApplicationRecord
     end
   end
 
+  def toggle_weather
+    if self.weather
+      self.weather = false
+    else
+      self.weather = true
+    end
+    self.save
+  end
+
   private
 
   def self.find_user auth
