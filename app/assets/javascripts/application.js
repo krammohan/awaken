@@ -23,6 +23,7 @@
 $(document).ready(function(){
 	$('div.hidden').fadeIn(2500);
 	weatherHandler();
+    distanceHandler();
 })
         
  var weatherHandler = function(){
@@ -42,5 +43,15 @@ $(document).ready(function(){
         
         });
         
-    };
+  };
+
+  var distanceHandler = function(){
+    var api_key = "AIzaSyAB-OQWl0TlKxC8cE00Cmn8nlhE2mN1BEg";
+
+   $.getJSON("https://maps.googleapis.com/maps/api/distancematrix/json?origins=Vancouver+BC|Seattle&destinations=San+Francisco|Victoria+BC&key="+ api_key, function(result){
+        console.log(result);
+    })
+  }
+
+
 
