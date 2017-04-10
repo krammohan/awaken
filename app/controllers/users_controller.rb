@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 private
 
   def user_params
-    params.require(:user).permit(:time, :weather, :zip)
+    params.require(:user).permit(:time, :weather, :zip, :origin_location, :destination_location, :mode, :transit_mode, :maps)
   end
 
 end
