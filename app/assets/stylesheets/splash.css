@@ -60,7 +60,7 @@ body.homepage #header:after {
 body.homepage.is-loading #header:after {
   opacity: 1;
 }
-}
+
 
 
 

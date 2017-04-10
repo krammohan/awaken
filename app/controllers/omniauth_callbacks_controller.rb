@@ -1,4 +1,4 @@
-class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def google_oauth2
   	login request.env["omniauth.auth"]
@@ -19,5 +19,5 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
 
   end
-  
+
 end
