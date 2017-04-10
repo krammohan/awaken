@@ -20,6 +20,10 @@ class UsersController < ApplicationController
 		current_user.toggle_weather
 	end
 
+  def change_maps
+    current_user.toggle_maps
+  end
+
 
 private
 

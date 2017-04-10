@@ -26,6 +26,15 @@ class User < ApplicationRecord
     self.save
   end
 
+  def toggle_maps
+    if self.maps
+      self.maps = false
+    else
+      self.maps = true
+    end
+    self.save
+  end
+
   private
 
   def self.find_user auth
