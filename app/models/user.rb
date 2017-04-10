@@ -11,9 +11,10 @@ class User < ApplicationRecord
   def construct_widgets
     html_string = ""
     if self.weather
-      html_string += Weather.get_weather(self.zip)
+      html_string += WeatherWidget.get_weather(self.zip)
     end
     self.content = html_string
+    self.save
   end
 
   def toggle_weather
