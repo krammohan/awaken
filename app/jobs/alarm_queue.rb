@@ -1,6 +1,7 @@
 class AlarmQueue < ActiveJob::Base
   queue_as :default
   def perform(user_id)
+    sleep 10
     $pubnub.publish( channel: 'my_channel', message: { action: false }) do |envelope|
       puts envelope.status
     end
