@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :sessions
   resources :users
   resources :widgets
+
+  put 'users/:id/weather' => 'users#change_weather', as: "users_weather"
 end

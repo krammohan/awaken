@@ -5,9 +5,12 @@ $(document).ready(function() {
   })
 
   $("#switch-is-on").on("click", function(){
-    var url = $(this).data("data")
-    console.log($(this))
-    console.log(url)
+    var url = $(this).closest("form").attr("action") + "/weather"
+    $.ajax({
+      url: url,
+      method: "PUT"
+    })
+
   })
 
   function value_() {
