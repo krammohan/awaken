@@ -6,3 +6,4 @@ class AddLocationToUsers < ActiveRecord::Migration[5.0]
   	add_column :users, :transit_mode, :string
   end
 end
+

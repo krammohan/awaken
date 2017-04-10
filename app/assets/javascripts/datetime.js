@@ -17,6 +17,6 @@ $(document).ready(function() {
   var checkbox = document.getElementById('mycheckbox');
   alert('checkbox value: ' + checkbox.checked);
   }
-
+$('select').material_select();
 
 })
