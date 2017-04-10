@@ -22,10 +22,18 @@
 
 $(document).ready(function(){
 	$('div.hidden').fadeIn(2500);
-	weatherHandler();
-    distanceHandler();
+	generatePage();
 })
-        
+
+
+var generatePage = function() {
+	if (weather == true){
+		weatherHandler();
+	}
+}
+
+
+
  var weatherHandler = function(){
         var api_key =  "9d3f2195def4857f73b59e548d2b7c4f";
     	$.getJSON("http://api.openweathermap.org/data/2.5/weather?zip="+ zip +",us&appid=" + api_key,function(result){
@@ -35,14 +43,14 @@ $(document).ready(function(){
         var fahrenheit_rounded = Math.round(fahrenheit*10)/10;
 
         var wind = Math.round((result.wind.speed/0.44704)*10)/10;
-        
+
         var message = (result.name+"<br><h5>"+ fahrenheit_rounded + "°F<br>"+wind+" mph<br>"+result.weather[0].description+"</h5>");
         console.log(name)
         $('#weather').append(message);
         $('#weather-icon').attr("src", "http://openweathermap.org/img/w/"+result.weather[0].icon+".png");
-        
+
         });
-        
+
   };
 
   var distanceHandler = function(){
@@ -52,6 +60,3 @@ $(document).ready(function(){
         console.log(result);
     })
   }
-
-
-
