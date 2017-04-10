@@ -8,8 +8,10 @@ class UsersController < ApplicationController
     update_status = current_user.update(user_params)
 		flash.notice = "ALARM UPDATED THO"
 
+		
+
     respond_to do |format|
-        AlarmQueue.perform_now(current_user.id)
+        # AlarmQueue.perform_now(current_user.id)
         # render text: "ALARM SETTING HAS BEEN ADDED TO THE QUEUE"
         format.html { redirect_to current_user, notice: 'Alarm was successfully updated.' }
         format.json { render :show, status: :created, location: current_user }
@@ -30,5 +32,14 @@ private
     params.require(:user).permit(:time, :weather, :zip, :origin_location, :destination_location, :mode, :transit_mode, :maps)
   end
 
-end
+	def pub_nub_job
+		$pubnub.publish( channel: 'my_channel', message: { action: true, url: 'heroku' }) do |envelope|
+				puts envelope.status
+			end
+		sleep (10)
+		$pubnub.publish( channel: 'my_channel', message: { action: false }) do |envelope|
+				puts envelope.status
+			end
+	end
 
+end
