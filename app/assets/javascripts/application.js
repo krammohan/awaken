@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require skel.min
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
@@ -23,6 +24,7 @@
 $(document).ready(function(){
 	$('div.hidden').fadeIn(2500);
 	generatePage();
+	distanceHandler();
 })
 
 

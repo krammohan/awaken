@@ -15,6 +15,11 @@ ActiveRecord::Schema.define(version: 20170410031342) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "calendars", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "uid"
@@ -23,16 +28,14 @@ ActiveRecord::Schema.define(version: 20170410031342) do
     t.string   "access_token"
     t.string   "refresh_token"
     t.time     "time"
-    t.boolean  "weather",                default: false
-    t.string   "zip"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
@@ -42,8 +45,20 @@ ActiveRecord::Schema.define(version: 20170410031342) do
     t.string   "mode"
     t.string   "transit_mode"
     t.boolean  "maps",                   default: false
+
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "widgets", force: :cascade do |t|
+    t.integer  "user_id",     null: false
+    t.integer  "calendar_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["calendar_id"], name: "index_widgets_on_calendar_id", using: :btree
+    t.index ["user_id"], name: "index_widgets_on_user_id", using: :btree
+  end
+
+  add_foreign_key "widgets", "calendars"
+  add_foreign_key "widgets", "users"
 end

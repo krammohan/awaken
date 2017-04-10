@@ -11,5 +11,3 @@ class WidgetsController < ApplicationController
 		# @transit_mode = current_user.transit_mode
 		end
 	end
-
-end
