@@ -27,7 +27,7 @@ $(document).ready(function(){
         
  var weatherHandler = function(){
         var api_key =  "9d3f2195def4857f73b59e548d2b7c4f";
-    	$.getJSON("http://api.openweathermap.org/data/2.5/weather?zip="+ zip +",us&appid=" + api_key,function(result){
+    	$.getJSON("https://api.openweathermap.org/data/2.5/weather?zip="+ zip +",us&appid=" + api_key,function(result){
         console.
         var kelvin = result.main.temp;
         var fahrenheit = ((kelvin)*(9/5))-459.67;
