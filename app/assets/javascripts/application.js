@@ -24,6 +24,7 @@
 $(document).ready(function(){
 	$('div.hidden').fadeIn(2500);
 	generatePage();
+	distanceHandler();
 })
 
 
