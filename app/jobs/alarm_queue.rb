@@ -1,6 +1,6 @@
 class AlarmQueue < ActiveJob::Base
   queue_as :default
-  def perform(user_id, pubnub)
+  def perform(user_id)
     user = User.find(user_id)
     if !(weekend?)
       if Time.now.strftime("%I:%M") == user.time.strftime("%I:%M")
