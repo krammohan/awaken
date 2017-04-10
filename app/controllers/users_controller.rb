@@ -5,10 +5,6 @@ class UsersController < ApplicationController
 	end
 
   def update
-		p "*" * 50
-		p user_params
-		p "*" * 50
-		p params
     update_status = current_user.update(user_params)
 		flash.notice = "ALARM UPDATED THO"
 
@@ -32,3 +28,5 @@ def user_params
 end
 
 end
+
+
