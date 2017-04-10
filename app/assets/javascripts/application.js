@@ -19,12 +19,11 @@
 
 
 // App.globals.name_of_user = <%= current_user.username %>
-
-// $(document).ready(function(){
-// 	$('div.hidden').fadeIn(2500);
+$(document).ready(function(){
+	$('div.hidden').fadeIn(2500);
 // 	generatePage();
 // 	distanceHandler();
-// })
+})
 
 
 // var generatePage = function() {

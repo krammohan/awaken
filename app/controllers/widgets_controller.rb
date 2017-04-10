@@ -2,5 +2,6 @@ class WidgetsController < ApplicationController
 
 	def index
 		@skip_layout = true
-		end
+		@content = User.find(params[:user_id]).content.html_safe
+	end
 	end
