@@ -1,10 +1,6 @@
 <head>
   <link rel="stylesheet" type="text/css" href="widgets.css">
 </head>
-<script>
-	var zip = "<%= @zip %>"
-  var weather = "<%= @weather %>"
-</script>
 <body id="stuff">
 	<div class="widget-container">
     <%= WeatherWidget.get_weather('84103') %>
