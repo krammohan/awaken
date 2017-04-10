@@ -20,11 +20,15 @@ class UsersController < ApplicationController
 		current_user.toggle_weather
 	end
 
+  def change_maps
+    current_user.toggle_maps
+  end
+
 
 private
 
   def user_params
-    params.require(:user).permit(:time, :weather, :zip)
+    params.require(:user).permit(:time, :weather, :zip, :origin_location, :destination_location, :mode, :transit_mode, :maps)
   end
 
 end

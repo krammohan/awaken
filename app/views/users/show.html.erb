@@ -1,3 +1,5 @@
+
+
 <% if @user %>
 	Its Logged in <%= @user.username %>
 <%else %>
@@ -40,27 +42,25 @@
                  <br>
 
                  <label>Select your mode of transportation</label>
-                  <select>
+                  <select name="user[mode]">
                     <option value="" disabled selected>Choose your option</option>
-                    <option name="user[mode]" value="car">car</option>
-                    <option name="user[mode]" value="public transit">public transit</option>
-                    <option name="user[mode]" value="bicycle">bicycle</option>
+                    <option value="car">car</option>
+                    <option value="public transit">public transit</option>
+                    <option value="bicycle">bicycle</option>
                   </select>
                  <br>
                  <label>If public transit, choose your preferred type</label>
-                  <select>
-                    <option name="user[transit_mode]" value="" disabled selected>Choose your option</option>
-                    <option name="user[transit_mode]" value="bus">bus</option>
-                    <option name="user[transit_mode]" value="muni">muni</option>
-                    <option name="user[transit_mode]" value="bart">bart</option>
+                  <select name="user[transit_mode]">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="bus">bus</option>
+                    <option value="muni">muni</option>
+                    <option value="bart">bart</option>
                   </select>
                  </div>
-             
-
-
+            
 							 <div class="card-action">
 								 <% if @user.maps %>
-									 <div class="switch" unchecked><label>Off<input name="user[maps]" id="switch-is-on" type="checkbox" checked><span class="lever"></span>On</label></div>
+									 <div class="switch" unchecked><label>Off<input name="user[maps]" id="switch-is-on-1" type="checkbox" checked><span class="lever"></span>On</label></div>
 									 <br>
 								 <% else %>
 									 <div class="switch">
@@ -107,7 +107,7 @@
 
 
 				 </div>
-         
+
 				 <input class="waves-effect waves-light btn-large" type="submit" onclick="value_()">
 
        </form>

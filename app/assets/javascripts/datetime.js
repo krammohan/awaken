@@ -13,10 +13,20 @@ $(document).ready(function() {
 
   })
 
+  $("#switch-is-on-1").on("click", function(){
+    var url = $(this).closest("form").attr("action") + "/maps"
+   console.log(url)
+    $.ajax({
+      url: url,
+      method: "PUT"
+    })
+
+  })
+
   function value_() {
-  var checkbox = document.getElementById('mycheckbox');
-  alert('checkbox value: ' + checkbox.checked);
-  }
-$('select').material_select();
+    var checkbox = document.getElementById('mycheckbox');
+    alert('checkbox value: ' + checkbox.checked);
+    }
+  $('select').material_select();
 
 })
