@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 		# 	time = "this is the time"
 
 
-			scheduler.jobs(:user_id => current_user.id).each do |job|
+			$scheduler.jobs(:user_id => current_user.id).each do |job|
 					if job.scheduled_at.includes? time.split(" ")[0]
 						job.unschedule
 					end
