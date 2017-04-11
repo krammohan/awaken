@@ -101,3 +101,5 @@ E, [2017-04-11T11:35:06.757119 #6205] ERROR -- : Couldn't cleanly terminate all 
 E, [2017-04-11T11:35:59.353511 #6213] ERROR -- : Couldn't cleanly terminate all actors in 10 seconds!
 E, [2017-04-11T11:43:46.953844 #6291] ERROR -- : Couldn't cleanly terminate all actors in 10 seconds!
 D, [2017-04-11T12:04:32.226172 #6487] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
+D, [2017-04-11T12:04:55.728760 #6522] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
+D, [2017-04-11T12:08:39.566136 #6593] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
