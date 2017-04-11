@@ -25,16 +25,6 @@ ActiveRecord::Schema.define(version: 20170410233142) do
     t.time     "time"
     t.boolean  "weather",                default: false
     t.string   "zip"
-<<<<<<< HEAD
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
-=======
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
     t.string   "email",                  default: "",            null: false
@@ -43,7 +33,6 @@ ActiveRecord::Schema.define(version: 20170410233142) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",          default: 0,             null: false
->>>>>>> 0bf1d4e0abdde21df36f441e6c57c208a67827b3
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
@@ -52,12 +41,8 @@ ActiveRecord::Schema.define(version: 20170410233142) do
     t.string   "destination_location"
     t.string   "mode"
     t.string   "transit_mode"
-<<<<<<< HEAD
     t.boolean  "maps"
-=======
-    t.boolean  "maps",                   default: false
     t.text     "content",                default: "<div></div>"
->>>>>>> 0bf1d4e0abdde21df36f441e6c57c208a67827b3
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
