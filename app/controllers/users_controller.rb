@@ -17,6 +17,8 @@ class UsersController < ApplicationController
 		p Time.now
 		p "User.tim"
 		p current_user.time
+		p "Params Date"
+		p params[:date]
 		p "Date Time"
 		p date_time
 		p "*" * 30
@@ -71,9 +73,8 @@ private
 	end
 
 	def date_time
-    datetime = params[:date] + current_user.time
-		datetime2 = DateTime.parse(datetime)
-		datetime2.utc.strftime("%Y-%m-%d %H:%M")
+		datetime = DateTime.parse(params[:date] + current_user.time)
+		datetime.utc.strftime("%Y-%m-%d %H:%M")
 
 
 		# Time.parse(params[:date] + current_user.time.strftime("%H:%M"))
