@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 			end
 
 			user_job = $scheduler.in('20s', :user_id => current_user.id) do
-				@user.construct_widgets
+				# @user.construct_widgets
 				pub_nub_job
 			end
 
