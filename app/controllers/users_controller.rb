@@ -64,8 +64,8 @@ private
 		datetime = ActiveSupport::TimeZone[zone].parse(params[:date] + " " + usertime)
 
 		Time.zone = "Greenwich"
-		datetime.in_time_zone.strftime("%Y-%m-%d %H:%M")
-
+		datetime = datetime.in_time_zone.strftime("%Y-%m-%d %H:%M")
+		datetime
 	end
 
 end
