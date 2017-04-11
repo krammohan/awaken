@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
 		p "*" * 30
 		p "Time"
-		p user.time
+		p current_user.time
 		p "*" * 30
 		p "*" * 30
 
