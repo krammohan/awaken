@@ -21,6 +21,8 @@ class User < ApplicationRecord
       html_string += MapsWidget.get_transit_info(self.origin_location, self.destination_location)
     end
 
+    
+
     self.content = html_string
     self.save
   end

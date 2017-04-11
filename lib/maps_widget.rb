@@ -8,11 +8,12 @@ module MapsWidget
 	  url = "https://maps.googleapis.com/maps/api/directions/json?origin=#{origin}&destination=#{destination}&departure_time=#{Time.now.to_i}&mode=transit&transit_mode=#{transit_mode}&key=AIzaSyClQh63PR-vCZbOpiExvqT2ZSKQsXPkrAo"
 	  response = HTTParty.get(url)
 
-    p distance = response.parsed_response["routes"][0]["legs"][0]["distance"]["text"]
-    p duration = response.parsed_response["routes"][0]["legs"][0]["duration"]["text"]
-    p summary = response.parsed_response["routes"][0]["summary"]
-    p mode = "Commuting by #{user_transit}:"
-    format_transit_info(mode, distance, duration_in_traffic)
+    distance = response.parsed_response["routes"][0]["legs"][0]["distance"]["text"]
+    duration = response.parsed_response["routes"][0]["legs"][0]["duration"]["text"]
+    summary = response.parsed_response["routes"][0]["summary"]
+    mode = "Commuting by #{user_transit}:"
+
+    format_transit_info(mode, distance, duration)
 	  # format_transit_info(response.parsed_response)
   end
 
@@ -21,11 +22,13 @@ module MapsWidget
   	origin = parse_address(user_origin)
   	destination = parse_address(user_destination)
 	  url = "https://maps.googleapis.com/maps/api/directions/json?origin=#{origin}&destination=#{destination}&departure_time=#{Time.now.to_i}&mode=driving&key=AIzaSyClQh63PR-vCZbOpiExvqT2ZSKQsXPkrAo"
+
 	  response = HTTParty.get(url)
-    # p distance = response.parsed_response["routes"][0]["legs"][0]["distance"]["text"]
-    # p duration_in_traffic = response.parsed_response["routes"][0]["legs"][0]["duration_in_traffic"]["text"]
-    # p summary = response.parsed_response["routes"][0]["summary"]
-    # p mode = "Commuting by car:"
+    distance = response.parsed_response["routes"][0]["legs"][0]["distance"]["text"]
+    duration_in_traffic = response.parsed_response["routes"][0]["legs"][0]["duration_in_traffic"]["text"]
+    summary = response.parsed_response["routes"][0]["summary"]
+    mode = "Commuting by car:"
+    
     format_transit_info(mode, distance, duration_in_traffic)
 
   end
