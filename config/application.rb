@@ -16,7 +16,7 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-config.time_zone = 'Pacific Time (US & Canada)'
+config.time_zone = "Pacific Time (US & Canada)"
 config.active_record.default_timzone = :local
 
 module Awaken

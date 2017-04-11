@@ -12,6 +12,10 @@ class UsersController < ApplicationController
 		# rufus = scheduler.at('2017-04-10 17:14', :user_id => 1) do print "KAVYAAAAA" end
 		# 	time = "this is the time"
 
+		p "*" * 30
+		p "Time"
+		p Time.now
+		p "*" * 30
 
 			$scheduler.jobs(:user_id => current_user.id).each do |job|
 					if job.scheduled_at.includes? time.split(" ")[0]
