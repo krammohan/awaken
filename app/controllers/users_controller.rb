@@ -74,7 +74,7 @@ private
 
 	def date_time
 		usertime = current_user.time.to_s.split(" ")[1]
-		datetime = DateTime.parse(params[:date] + usertime)
+		datetime = Time.parse(params[:date] + usertime)
 
 		Time.zone = "UTC"
 
