@@ -75,11 +75,14 @@ private
 	end
 
 	def date_time
+
 		usertime = current_user.time.to_s.split(" ")[1]
-		datetime = Time.parse(params[:date] + " " + usertime)
+		zone = "Pacific Time (US & Canada)"
+		ActiveSupport::TimeZone[zone].parse(params[:date] + " " + usertime)
+
+		# datetime = Time.parse(params[:date] + " " + usertime)
 
 		Time.zone = "Greenwich"
-
 		p "Previous datetime"
 		p datetime
 		p "Time zone"
