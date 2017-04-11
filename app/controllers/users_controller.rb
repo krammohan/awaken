@@ -78,7 +78,7 @@ private
 
 		usertime = current_user.time.to_s.split(" ")[1]
 		zone = "Pacific Time (US & Canada)"
-		ActiveSupport::TimeZone[zone].parse(params[:date] + " " + usertime)
+		datetime = ActiveSupport::TimeZone[zone].parse(params[:date] + " " + usertime)
 
 		# datetime = Time.parse(params[:date] + " " + usertime)
 
