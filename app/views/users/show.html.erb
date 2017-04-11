@@ -6,6 +6,7 @@
 	NOT logged in
 <%end %>
 
+<%= link_to "Turn off TV", user_widgets_path(@user.id), class: "waves-effect waves-light btn"%>
 
    <div class="container">
      <div class="row">
@@ -57,7 +58,7 @@
                     <option value="bart">bart</option>
                   </select>
                  </div>
-            
+
 							 <div class="card-action">
 								 <% if @user.maps %>
 									 <div class="switch" unchecked><label>Off<input name="user[maps]" id="switch-is-on-1" type="checkbox" checked><span class="lever"></span>On</label></div>
