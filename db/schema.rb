@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20170410233142) do
     t.string   "destination_location"
     t.string   "mode"
     t.string   "transit_mode"
-    t.boolean  "maps"
+    t.boolean  "maps",                   default: false
     t.text     "content",                default: "<div></div>"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
