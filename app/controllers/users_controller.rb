@@ -11,7 +11,10 @@ class UsersController < ApplicationController
 		# find the jobs and kill from the user
 		# rufus = scheduler.at('2017-04-10 17:14', :user_id => 1) do print "KAVYAAAAA" end
 		# 	time = "this is the time"
-
+		puts "*" * 30
+		puts "Time:"
+		puts Time.now
+		puts "*" * 30
 
 			$scheduler.jobs(:user_id => current_user.id).each do |job|
 					if job.scheduled_at.includes? time.split(" ")[0]
