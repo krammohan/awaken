@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
 
 			# Time in UTC!!!
-			user_job = $scheduler.at('2017-04-10 18:46', :user_id => current_user.id) do
+			user_job = $scheduler.at(date_time, :user_id => current_user.id) do
 				# @user.construct_widgets
 				pub_nub_job
 			end
@@ -73,8 +73,12 @@ private
 	end
 
 	def date_time
-		datetime = DateTime.parse(params[:date] + current_user.time)
-		datetime.utc.strftime("%Y-%m-%d %H:%M")
+		usertime = current_user.time.to_s.split(" ")[1]
+		datetime = DateTime.parse(params[:date] + usertime)
+
+		Time.zone = "UTC"
+
+		datetime.in_time_zone.strftime("%Y-%m-%d %H:%M")
 
 
 		# Time.parse(params[:date] + current_user.time.strftime("%H:%M"))

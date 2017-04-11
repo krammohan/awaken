@@ -71,3 +71,5 @@ D, [2017-04-10T15:08:51.534151 #1397] DEBUG -- Pubnub::Event: Event#handle
 D, [2017-04-10T15:08:51.534294 #1397] DEBUG -- Pubnub::Event: Firing callbacks for Pubnub::Publish
 D, [2017-04-10T18:50:14.223533 #3677] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
 E, [2017-04-10T19:05:40.756171 #3710] ERROR -- : Couldn't cleanly terminate all actors in 10 seconds!
+D, [2017-04-10T19:21:45.117030 #4167] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
+D, [2017-04-10T19:27:27.164935 #4238] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
