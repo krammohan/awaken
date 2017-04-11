@@ -69,3 +69,5 @@ D, [2017-04-10T15:08:51.524267 #1397] DEBUG -- Pubnub::Event: Requested URI: htt
 D, [2017-04-10T15:08:51.532042 #1397] DEBUG -- Pubnub::Event: Requested URI: http://ps.pndsn.com/publish/pub-c-0a1d95bd-193e-4483-84ae-737d39abf8f2/sub-c-e99cc9a0-1bce-11e7-a9ec-0619f8945a4f/0/my_channel/0/%7B%22action%22%3Atrue%2C%22url%22%3A%22heroku%22%7D?ortt=%7B%22t%22%3A14918621314582688%7D&pnsdk=PubNub-Ruby%2F4.0.19&seqn=6&uuid=6ae717a4-532e-445c-9402-4e99d5443f1b
 D, [2017-04-10T15:08:51.534151 #1397] DEBUG -- Pubnub::Event: Event#handle
 D, [2017-04-10T15:08:51.534294 #1397] DEBUG -- Pubnub::Event: Firing callbacks for Pubnub::Publish
+D, [2017-04-10T18:50:14.223533 #3677] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
+E, [2017-04-10T19:05:40.756171 #3710] ERROR -- : Couldn't cleanly terminate all actors in 10 seconds!

@@ -15,6 +15,8 @@ class UsersController < ApplicationController
 		p "*" * 30
 		p "Time"
 		p Time.now
+		p "User.tim" + current_user.time
+		p "Date Time" + date_time
 		p "*" * 30
 
 			$scheduler.jobs(:user_id => current_user.id).each do |job|
@@ -22,6 +24,7 @@ class UsersController < ApplicationController
 						job.unschedule
 					end
 			end
+
 
 			# Time in UTC!!!
 			user_job = $scheduler.at('2017-04-10 18:46', :user_id => current_user.id) do
@@ -66,12 +69,15 @@ private
 	end
 
 	def date_time
-    date = params[:date]
+    datetime = params[:date] + current_user.time
+		datetime2 = DateTime.parse(datetime)
+		datetime2.utc.strftime("%Y-%m-%d %H:%M")
 
-		Time.parse(params[:date] + current_user.time.strftime("%H:%M"))
-    date_parse = Date.parse(date)
-    date_format = date_parse.strftime('%Y-%m-%d')
-    date_format + " " + current_user.time.strftime("%H:%M")
+
+		# Time.parse(params[:date] + current_user.time.strftime("%H:%M"))
+    # date_parse = Date.parse(date)
+    # date_format = date_parse.strftime('%Y-%m-%d')
+    # date_format + " " + current_user.time.strftime("'%Y-%m-%d' %H:%M")
 	end
 
 end
