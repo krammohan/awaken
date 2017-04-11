@@ -1,3 +1,5 @@
+require_relative '../../lib/weather_widget'
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
