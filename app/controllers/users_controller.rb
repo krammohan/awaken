@@ -14,21 +14,18 @@ class UsersController < ApplicationController
 
 		p "*" * 30
 		p "Time"
-		p Time.now
-		p "User.tim"
-		p current_user.time
-		p "Params Date"
-		p params[:date]
-		p "Date Time"
-		p "*" * 30
-		p date_time
+		p user.time
 		p "*" * 30
 		p "*" * 30
 
+			# Not working 100% => needs to know if it's the same day!
+
 			$scheduler.jobs(:user_id => current_user.id).each do |job|
-					if job.scheduled_at.includes? time.split(" ")[0]
-						job.unschedule
-					end
+						p job
+						p "*" * 30
+					# if job.scheduled_at.includes? user.time.split(" ")[0]
+					# 	job.unschedule
+					# end
 			end
 
 
