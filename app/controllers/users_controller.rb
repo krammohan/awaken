@@ -15,8 +15,10 @@ class UsersController < ApplicationController
 		p "*" * 30
 		p "Time"
 		p Time.now
-		p "User.tim" + current_user.time
-		p "Date Time" + date_time
+		p "User.tim"
+		p current_user.time
+		p "Date Time"
+		p date_time
 		p "*" * 30
 
 			$scheduler.jobs(:user_id => current_user.id).each do |job|
