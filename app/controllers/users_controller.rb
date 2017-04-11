@@ -80,17 +80,10 @@ private
 		# datetime = Time.parse(params[:date] + " " + usertime)
 
 		Time.zone = "Greenwich"
-		p "Previous datetime"
-		p datetime
-		p "Time zone"
-		p Time.zone
-		p "Date time in time zone"
-		p datetime.in_time_zone
 
-		p "Formatted shit"
 		datetime.in_time_zone.strftime("%Y-%m-%d %H:%M")
 
-
+	
 		# Time.parse(params[:date] + current_user.time.strftime("%H:%M"))
     # date_parse = Date.parse(date)
     # date_format = date_parse.strftime('%Y-%m-%d')
