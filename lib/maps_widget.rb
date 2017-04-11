@@ -28,7 +28,7 @@ module MapsWidget
     duration_in_traffic = response.parsed_response["routes"][0]["legs"][0]["duration_in_traffic"]["text"]
     summary = response.parsed_response["routes"][0]["summary"]
     mode = "Commuting by car:"
-    
+
     format_transit_info(mode, distance, duration_in_traffic)
 
   end

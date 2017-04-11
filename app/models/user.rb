@@ -17,7 +17,11 @@ class User < ApplicationRecord
     end
 
     if self.maps
-      html_string += MapsWidget.get_transit_info(self.origin_location, self.destination_location)
+      if self.mode == "car"
+        html_string += MapsWidget.get_driving_info(self.origin_location, self.destination_location)
+      elsif self.mode == "public transit"
+        html_string += MapsWidget.get_transit_info(self.origin_location, self.destination_location, self.transit_mode)
+      end
     end
 
     self.content = html_string
