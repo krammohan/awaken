@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 		p "*" * 30
 
 			# Not working 100% => needs to know if it's the same day!
+			p $scheduler.jobs(:user_id => current_user.id)
 
 			$scheduler.jobs(:user_id => current_user.id).each do |job|
 						p job
@@ -83,7 +84,7 @@ private
 
 		datetime.in_time_zone.strftime("%Y-%m-%d %H:%M")
 
-	
+
 		# Time.parse(params[:date] + current_user.time.strftime("%H:%M"))
     # date_parse = Date.parse(date)
     # date_format = date_parse.strftime('%Y-%m-%d')
