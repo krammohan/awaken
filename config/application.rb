@@ -23,6 +23,10 @@ module Awaken
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.active_job.queue_adapter = :sidekiq
+<<<<<<< HEAD
 
+=======
+    config.autoload_paths << Rails.root.join('lib')
+>>>>>>> 0bf1d4e0abdde21df36f441e6c57c208a67827b3
   end
 end

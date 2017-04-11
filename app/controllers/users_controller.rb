@@ -18,7 +18,8 @@ class UsersController < ApplicationController
 			# end
 
 			user_job = $scheduler.at(date_time, :user_id => current_user.id) do
-				# @user.construct_widgets
+				current_user.construct_widgets
+				# Render something?
 				pub_nub_job
 			end
 
