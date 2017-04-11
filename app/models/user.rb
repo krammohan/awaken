@@ -13,6 +13,11 @@ class User < ApplicationRecord
     if self.weather
       html_string += WeatherWidget.get_weather(self.zip)
     end
+
+    if self.map
+      html_string += MapsWidget.get_transit_info(self.origin_location, self.destination_location)
+    end
+    
     self.content = html_string
     self.save
   end
