@@ -4,7 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:google_oauth2]
 
-
   def self.from_omniauth auth
     self.find_user auth
   end
@@ -12,6 +11,7 @@ class User < ApplicationRecord
   def construct_widgets
     html_string = ""
     if self.weather
+      puts "I AM INSIDE THE IF STATEMENT!!!!"
       html_string += WeatherWidget.get_weather(self.zip)
     end
     self.content = html_string
