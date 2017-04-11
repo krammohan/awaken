@@ -78,6 +78,13 @@ private
 
 		Time.zone = "Greenwich"
 
+		p "Previous datetime"
+		p datetime
+		p "Time zone"
+		p Time.zone
+		p "Date time in time zone"
+		p datetime.in_time_zone
+
 		datetime.in_time_zone.strftime("%Y-%m-%d %H:%M")
 
 
