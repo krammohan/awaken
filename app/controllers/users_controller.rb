@@ -4,11 +4,27 @@ class UsersController < ApplicationController
 	  @user = current_user
 	end
 
-  def update
-    update_status = current_user.update(user_params)
+	def update
+		update_status = current_user.update(user_params)
 		flash.notice = "ALARM UPDATED THO"
 
-		
+		# find the jobs and kill from the user
+		# rufus = scheduler.at('2017-04-10 17:14', :user_id => 1) do print "KAVYAAAAA" end
+		# 	time = "this is the time"
+
+
+			scheduler.jobs(:user_id => current_user.id).each do |job|
+					if job.scheduled_at.includes? time.split(" ")[0]
+						job.unschedule
+					end
+			end
+
+			user_job = $scheduler.at('2017-04-10 17:42', :user_id => current_user.id) do
+				@user.construct_widgets
+				pub_nub_job
+			end
+
+		# .strftime("%Y-%m-%d %H:%M")
 
     respond_to do |format|
         # AlarmQueue.perform_now(current_user.id)
