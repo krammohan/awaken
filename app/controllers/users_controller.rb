@@ -22,10 +22,12 @@ class UsersController < ApplicationController
 					end
 			end
 
-			p user_job = $scheduler.at('2017-04-11 1:24 PDT', :user_id => current_user.id) do
+			user_job = $scheduler.at('2017-04-11 1:26', :user_id => current_user.id) do
 				# @user.construct_widgets
 				pub_nub_job
 			end
+
+			p user_job
 
 		# .strftime("%Y-%m-%d %H:%M")
 
