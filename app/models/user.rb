@@ -16,6 +16,11 @@ class User < ApplicationRecord
       puts "I AM INSIDE THE IF STATEMENT!!!!"
       html_string += WeatherWidget.get_weather(self.zip)
     end
+
+    if self.maps
+      html_string += MapsWidget.get_transit_info(self.origin_location, self.destination_location)
+    end
+
     self.content = html_string
     self.save
   end
