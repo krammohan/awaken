@@ -76,7 +76,7 @@ private
 		usertime = current_user.time.to_s.split(" ")[1]
 		datetime = Time.parse(params[:date] + " " + usertime)
 
-		Time.zone = "UTC"
+		Time.zone = "Greenwich"
 
 		datetime.in_time_zone.strftime("%Y-%m-%d %H:%M")
 
