@@ -48,7 +48,7 @@ private
   end
 
 	def pub_nub_job
-		$pubnub.publish( channel: 'my_channel', message: { action: true, url: 'heroku' }) do |envelope|
+		$pubnub.publish( channel: 'my_channel', message: { action: true, url: 'https://awaken-04.herokuapp.com/users/1/widgets' }) do |envelope|
 				puts envelope.status
 			end
 		sleep (10) # CHANGE THIS TIME
