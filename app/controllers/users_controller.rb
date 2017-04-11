@@ -20,7 +20,9 @@ class UsersController < ApplicationController
 		p "Params Date"
 		p params[:date]
 		p "Date Time"
+		p "*" * 30
 		p date_time
+		p "*" * 30
 		p "*" * 30
 
 			$scheduler.jobs(:user_id => current_user.id).each do |job|
@@ -85,6 +87,7 @@ private
 		p "Date time in time zone"
 		p datetime.in_time_zone
 
+		p "Formatted shit"
 		datetime.in_time_zone.strftime("%Y-%m-%d %H:%M")
 
 
