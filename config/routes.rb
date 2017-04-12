@@ -15,4 +15,6 @@ Rails.application.routes.draw do
 
   put 'users/:id/weather' => 'users#change_weather', as: "users_weather"
   put 'users/:id/maps' => 'users#change_maps', as: "users_maps"
+  put 'users/:id/news' => 'users#change_news', as: "users_news"
+
 end
