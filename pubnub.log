@@ -115,3 +115,6 @@ E, [2017-04-11T23:07:23.088614 #97655] ERROR -- : Couldn't cleanly terminate all
 D, [2017-04-11T23:44:09.669700 #98444] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
 D, [2017-04-12T00:00:23.213989 #98807] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
 D, [2017-04-12T00:21:26.888217 #99310] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
+D, [2017-04-12T10:32:34.519143 #1262] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
+D, [2017-04-12T10:32:36.600908 #1270] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
+D, [2017-04-12T10:32:56.922595 #1366] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
