@@ -1,4 +1,7 @@
+require_relative '../../lib/weather_widget'
+
 class User < ApplicationRecord
+  has_many :devices
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -8,13 +11,33 @@ class User < ApplicationRecord
     self.find_user auth
   end
 
-  def check_and_construct
-    if self.calendar
-      Calendar.construct(self)#.whatever info is needed for cal API
-    end
+  def construct_widgets
+      puts "I AM INSIDE construct_widgets!!!"
+    html_string = ""
     if self.weather
-      Weather.construct(self.zip)
+      html_string += WeatherWidget.get_weather(self.zip)
     end
+
+    if self.maps
+      if self.mode == "car"
+        html_string += MapsWidget.get_driving_info(self.origin_location, self.destination_location)
+      elsif self.mode == "public transit"
+        html_string += MapsWidget.get_transit_info(self.origin_location, self.destination_location, self.transit_mode)
+      end
+    end
+
+    if self.news
+      puts "I AM INSIDE THE IF STATEMENT FOR SELF.NEWS!!!"
+      html_string += NewsWidget.get_news
+    end
+
+    self.content = html_string
+    self.save
+  end
+
+  def reset_content
+    self.content = "<div></div>"
+    self.save
   end
 
   def toggle_weather
@@ -35,6 +58,15 @@ class User < ApplicationRecord
     self.save
   end
 
+  def toggle_news
+    if self.news
+      self.news = false
+    else
+      self.news = true
+    end
+    self.save
+  end
+
   private
 
   def self.find_user auth
@@ -47,7 +79,10 @@ class User < ApplicationRecord
       user.email    = "#{auth.uid}@app.com"
       user.username = username
       user.password = Devise.friendly_token[0,20]
+      user.channel = SecureRandom.urlsafe_base64
     end
   end
+
+
 
 end

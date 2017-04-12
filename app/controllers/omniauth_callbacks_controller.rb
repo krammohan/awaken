@@ -21,5 +21,3 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
 end
-
-# DO NOT CHANGE

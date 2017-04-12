@@ -1,8 +1,4 @@
 
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600");
-@import url("font-awesome.min.css");
-
-
 .is-loading *, .is-loading *:after, .is-loading *:before {
   -moz-transition: none !important;
   -webkit-transition: none !important;
@@ -14,7 +10,7 @@
   animation: none !important;
 }
 
-#header {
+#headerone {
   position: relative;
   background-image: url("/assets/sunrise2.jpg");
   background-size: cover;
@@ -28,16 +24,16 @@
 
 
 
-.homepage #header {
+.homepage #headerone {
   height: 100vh;
   min-height: 40em;
 }
 
-.homepage #header h1 {
+.homepage #headerone h1 {
   font-size: 4em;
 }
 
-.homepage #header:after {
+.homepage #headerone:after {
   content: '';
   background: #1C0920;
   display: block;
@@ -57,15 +53,8 @@
   transition-delay: 0.5s;
 }
 
-.homepage.is-loading #header:after {
+.homepage.is-loading #headerone:after {
   opacity: 1;
 }
 
 
-
-
-/*
-  Helios by HTML5 UP
-  html5up.net | @ajlkn
-  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-  */

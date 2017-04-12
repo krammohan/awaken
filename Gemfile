@@ -5,6 +5,10 @@ gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'devise', github: 'twalpole/devise', branch: 'master'
 gem 'omniauth-google-oauth2'
 gem 'google-api-client', '0.8.2', require: 'google/api_client'
+gem 'httparty'
+# gem 'google_maps_service'
+
+gem 'rspotify'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use postgresql as the database for Active Record
@@ -21,6 +25,13 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+
+#weather api gem
+gem 'weather-api'
+#convert zip-codes to city/state database
+gem 'zip-codes'
+
+gem 'awesome_print'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -40,6 +51,7 @@ gem 'pubnub'
 
 gem 'sidekiq'
 gem 'sinatra', github: 'sinatra/sinatra'
+gem 'rufus-scheduler'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
