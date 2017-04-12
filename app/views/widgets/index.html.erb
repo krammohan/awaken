@@ -13,6 +13,9 @@
   </div>
 </header>
 
+<%= audio_tag "GetLow.m4a", class: "audio-play" %>
+<p class="btn btn-primary audioButton">Play</p>
+
 <body onload="startTime()" class="w3-light-grey">
 
   <div class="w3-row-padding w3-center w3-margin-top">
@@ -30,6 +33,7 @@
     </div>
   </div>
   </div>
+</body>
 
 <footer class="w3-container w3-dark-grey w3-theme-dark w3-padding-16">
   <div class="w3-center w3-container w3-padding">
@@ -43,6 +47,23 @@
   </div>
 </footer>
 
+<script>
+  $(".audioButton").on("click", function() {
+    $(".audio-play")[0].currentTime = 0;
+    return $(".audio-play")[0].play();
+  });
 
-</body>
+   // var source = "../GetLow.mp3"
+   // var audio = document.createElement("audio");
+   // //
+   // audio.autoplay = true;
+   // //
+   // audio.load()
+   // audio.addEventListener("load", function() { 
+   //     audio.play(); 
+   // }, true);
+   // audio.src = source;
+</script>
+
+
 
