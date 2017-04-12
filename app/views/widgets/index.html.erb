@@ -8,11 +8,12 @@
 <!-- Header -->
 <header class="w3-container w3-padding blah">
   <div class="w3-center">
-  <h4>"INSPIRATIONAL QUOTE OF THE DAY..."</h4>
+  <h5>"<%= @quotes_list.sample.upcase %>"</h5>
   <h1 class="w3-xxxlarge w3-animate-bottom">GOOD MORNING, BEAUTIFUL.</h1>
   </div>
-  <iframe src="https://embed.spotify.com/?uri=spotify:track:2TpxZ7JUBn3uw46aR7qd6V" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+<!--   <iframe src="https://embed.spotify.com/?uri=spotify:track:7jslhIiELQkgW9IHeYNOWE" width="300" height="380" frameborder="0" allowtransparency="true"></iframe> -->
 </header>
+
 
 <body onload="startTime()" class="w3-light-grey">
 
@@ -20,7 +21,7 @@
   
   <%= @content %>
 
-  <div class="w3-third">
+<!--   <div class="w3-third">
     <div class="w3-card-2 w3-container w3-light-grey" style="min-height:360px">
     <h3>Current News</h3><br>
     <i class="fa fa-newspaper-o w3-margin-bottom w3-text-theme" style="font-size:70px"></i>
@@ -29,7 +30,7 @@
     <p>Keeping the earth green</p>
     <p>Rain rain rain</p>
     </div>
-  </div>
+  </div> -->
   </div>
 </body>
 
