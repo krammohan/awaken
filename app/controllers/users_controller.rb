@@ -57,12 +57,12 @@ private
     params.require(:user).permit(:time, :weather, :zip, :origin_location, :destination_location, :mode, :transit_mode, :maps, :news)
   end
 
-	def pub_nub_job #(current_user.channel) - this will allow us to send on a variable channel
-		$pubnub.publish( channel: 'my_channel', message: { action: true, url: 'https://awaken-04.herokuapp.com/users/1/widgets' }) do |envelope|
+	def pub_nub_job
+		$pubnub.publish( channel: current_user.channel, message: { action: true, url: 'https://awaken-04.herokuapp.com/users/1/widgets' }) do |envelope|
 				puts envelope.status
 			end
 		sleep (10) # CHANGE THIS TIME
-		$pubnub.publish( channel: 'my_channel', message: { action: false }) do |envelope|
+		$pubnub.publish( channel: current_user.channel, message: { action: false }) do |envelope|
 				puts envelope.status
 			end
 	end
