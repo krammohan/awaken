@@ -11,6 +11,7 @@ class User < ApplicationRecord
   end
 
   def construct_widgets
+      puts "I AM INSIDE construct_widgets!!!"
     html_string = ""
     if self.weather
       html_string += WeatherWidget.get_weather(self.zip)
@@ -22,6 +23,11 @@ class User < ApplicationRecord
       elsif self.mode == "public transit"
         html_string += MapsWidget.get_transit_info(self.origin_location, self.destination_location, self.transit_mode)
       end
+    end
+
+    if self.news
+      puts "I AM INSIDE THE IF STATEMENT FOR SELF.NEWS!!!"
+      html_string += NewsWidget.get_news
     end
 
     self.content = html_string
@@ -47,6 +53,15 @@ class User < ApplicationRecord
       self.maps = false
     else
       self.maps = true
+    end
+    self.save
+  end
+
+  def toggle_news
+    if self.news
+      self.news = false
+    else
+      self.news = true
     end
     self.save
   end
