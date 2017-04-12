@@ -68,7 +68,7 @@ class User < ApplicationRecord
   end
 
   def set_channel
-    self.channel = SecureRandom.urlsafe_base64
+    user.channel = SecureRandom.urlsafe_base64
   end
 
   private
