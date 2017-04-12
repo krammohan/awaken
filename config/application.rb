@@ -25,5 +25,6 @@ module Awaken
     config.active_job.queue_adapter = :sidekiq
 
     config.autoload_paths << Rails.root.join('lib')
+    # config.assets.precompile << "audios/*"
   end
 end

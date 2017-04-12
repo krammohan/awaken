@@ -7,6 +7,19 @@ module WeatherWidget
   end
 
   def self.format_weather(data)
-    "<div id='weather-widget' class= 'hidden' style='background-color:rgba(0, 0, 0, 0.7);'><h3 text-align='center' color='white'>Weather<img id='weather-icon' src='#{data.image.url}' height='60' width='60'></img></h3>#{data.location.city}<br><p id='weather'>#{data.condition.temp}° <br>#{data.condition.text} <br>Wind: #{data.wind.speed}mph <br></p></div>"
+
+    "<div class='w3-third'>
+      <div class='w3-card-2 w3-container' style='min-height:360px'>
+       <h3>Weather</h3><br>
+        <i class='fa fa-sellsy w3-margin-bottom w3-text-theme' style='font-size:70px'></i>
+        <p>#{data.location.city}</p>
+        <h3>#{data.condition.temp}°</h3>
+        <p>#{data.condition.text}</p>
+        <p>Windshield: #{data.wind.speed}mph</p>
+      </div>
+    </div>"
+  
+# <img id="weather-icon" src="#{data.image.url}" height="60" width="60"></img><br>
+
   end
 end

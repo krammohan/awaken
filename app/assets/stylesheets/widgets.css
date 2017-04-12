@@ -76,8 +76,24 @@
 	width: 100%;
 }
 
+@import url(https://fonts.googleapis.com/css?family=Lato:400,500,700);
+clock{
+  color: white;
+  text-align: center;
+  /*vertical-align: middle;*/
+  /*font: 63px  Lato, sans-serif;*/
+  /*position: relative;*/
+  top: 10vw;
+}
 
 
+@media only screen and (max-width: 767px) {
+  clock {
+    font: 130px  Lato, sans-serif;
+    top: 20vw;
+  }
+  
+}
 
 
 

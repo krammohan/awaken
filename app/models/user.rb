@@ -15,12 +15,15 @@ class User < ApplicationRecord
       puts "I AM INSIDE construct_widgets!!!"
     html_string = ""
     if self.weather
-      puts "I AM INSIDE THE IF STATEMENT!!!!"
       html_string += WeatherWidget.get_weather(self.zip)
     end
 
     if self.maps
-      html_string += MapsWidget.get_transit_info(self.origin_location, self.destination_location)
+      if self.mode == "car"
+        html_string += MapsWidget.get_driving_info(self.origin_location, self.destination_location)
+      elsif self.mode == "public transit"
+        html_string += MapsWidget.get_transit_info(self.origin_location, self.destination_location, self.transit_mode)
+      end
     end
 
     if self.news
