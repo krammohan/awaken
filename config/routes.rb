@@ -19,4 +19,5 @@ Rails.application.routes.draw do
 
   get 'devices/new' => 'devices#new', as: "new_devices"
   post 'devices/create' => 'devices#create'
+  get 'devices/info/:id' => 'devices#info'
 end

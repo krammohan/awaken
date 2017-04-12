@@ -10,7 +10,7 @@ class DevicesController < ApplicationController
         format.json do
           render json: {
             message: "registered",
-            url: "http://localhost3000/users/#{@serial}/widgets",
+            url: "http://blahtest2.herokuapp.com/users/#{@device.user.id}/widgets",
             channel: user_channel
           }.to_json
         end
@@ -20,7 +20,7 @@ class DevicesController < ApplicationController
         format.json do
           render json: {
             message: "not registered",
-            url: "http://localhost3000/users/#{@serial}/widgets",
+            url: "http://blahtest2.herokuapp.com/devices/info/#{@serial}",
             channel: "generic"
           }.to_json
         end
@@ -38,6 +38,10 @@ class DevicesController < ApplicationController
     if @device.save
       redirect_to user_path(current_user.id)
     end
+  end
+
+  def info
+    @serial = params[:id]
   end
 
 end
