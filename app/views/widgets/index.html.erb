@@ -1,9 +1,49 @@
-<head>
-  <link rel="stylesheet" type="text/css" href="widgets.css">
-</head>
-<body id="stuff">
-	<div class="widget-container">
-    <%= @content %>
-	</div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="widgets.css">
+
+
+<!-- Header -->
+<header class="w3-container w3-padding">
+  <div class="w3-center">
+  <h4>"INSPIRATIONAL QUOTE OF THE DAY..."</h4>
+  <h1 class="w3-xxxlarge w3-animate-bottom">GOOD MORNING, BEAUTIFUL.</h1>
+  </div>
+</header>
+
+<body onload="startTime()" class="w3-light-grey">
+
+  <div class="w3-row-padding w3-center w3-margin-top">
   
+  <%= @content %>
+
+  <div class="w3-third">
+    <div class="w3-card-2 w3-container w3-light-grey" style="min-height:360px">
+    <h3>Current News</h3><br>
+    <i class="fa fa-newspaper-o w3-margin-bottom w3-text-theme" style="font-size:70px"></i>
+    <p>Trump tho...</p>
+    <p>Soup kitchen shenanigans</p>
+    <p>Keeping the earth green</p>
+    <p>Rain rain rain</p>
+    </div>
+  </div>
+  </div>
+
+<footer class="w3-container w3-dark-grey w3-theme-dark w3-padding-16">
+  <div class="w3-center w3-container w3-padding">
+    <h1 class="w3-xxxlarge">
+      <clock>
+        <div id="time"></div>
+        <div style="font-size: 50px; "></div>
+      </clock>
+    </h1>
+    <p><%= Date.today.strftime("%A, %b %d, %Y").upcase %></p>
+  </div>
+</footer>
+
+
 </body>
+
