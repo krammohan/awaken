@@ -1,16 +1,27 @@
 class DevicesController < ApplicationController
   def connect
     @serial = params[:id]
-    if Device.find_by(serial: @serial)
+    @device = Device.find_by(serial: @serial)
+    if @device
       #send the matching url and pubnub connection info
       #potentially redirect to a success page, telling users they are good to turn off their screen
+      user_channel = @device.user.channel
+      respond_to do |format|
+        format.json do
+          render json: {
+            message: "registered",
+            url: "http://localhost3000/users/#{@serial}/widgets",
+            channel: user_channel
+          }.to_json
+        end
+      end
     else
       respond_to do |format|
         format.json do
           render json: {
-            message: "success",
-            url: "http://localhost3000/users/#{@serial}/widgets"
-
+            message: "not registered",
+            url: "http://localhost3000/users/#{@serial}/widgets",
+            channel: "generic"
           }.to_json
         end
       end
@@ -24,9 +35,6 @@ class DevicesController < ApplicationController
 
   def create
     @device = Device.new(user_id: current_user.id, serial: params[:device][:serial])
-    p "*" * 35
-    p params
-    p "*" * 35
     if @device.save
       redirect_to user_path(current_user.id)
     end
