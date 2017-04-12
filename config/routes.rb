@@ -15,5 +15,8 @@ Rails.application.routes.draw do
 
   put 'users/:id/weather' => 'users#change_weather', as: "users_weather"
   put 'users/:id/maps' => 'users#change_maps', as: "users_maps"
-  get 'devices/:id' => 'devices#connect'
+  get 'devices/connect/:id' => 'devices#connect'
+
+  get 'devices/new' => 'devices#new', as: "new_devices"
+  post 'devices/create' => 'devices#create'
 end
