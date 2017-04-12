@@ -47,10 +47,14 @@ class UsersController < ApplicationController
     current_user.toggle_maps
   end
 
+  def change_news
+    current_user.toggle_news
+  end
+
 private
 
   def user_params
-    params.require(:user).permit(:time, :weather, :zip, :origin_location, :destination_location, :mode, :transit_mode, :maps)
+    params.require(:user).permit(:time, :weather, :zip, :origin_location, :destination_location, :mode, :transit_mode, :maps, :news)
   end
 
 	def pub_nub_job
