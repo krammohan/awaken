@@ -6,6 +6,8 @@ Its Logged in <%= @user.username %>
 NOT logged in
 <%end %>
 
+<%= link_to "Register new device", new_devices_path, class: "waves-effect waves-light btn"%>
+
 <div class="container">
  <div class="row">
    <h2 class="col s12">Set Your Alarm</h2>
@@ -105,7 +107,7 @@ NOT logged in
      </div>
    </div>
  </div>
- 
+
 </div>
 
 <input class="waves-effect waves-light btn-large" type="submit" onclick="value_()">
