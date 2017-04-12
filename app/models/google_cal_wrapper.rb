@@ -1,8 +1,6 @@
-class GoogleCalWrapper
-  def initialize(current_user)
-    configure_client(current_user)
-  end
-  def configure_client(current_user)
+module GoogleCalWrapper
+
+  def self.configure_client(current_user)
     @client = Google::APIClient.new()
     p "*" * 30
     p @client
@@ -16,7 +14,7 @@ class GoogleCalWrapper
     @client.authorization.refresh_token
     @service = @client.discovered_api('calendar', 'v3')
   end
-  def calendar_see(current_user)
+  def self.calendar_see(current_user)
     p "*CALENDAR"*34
     p user = current_user
     response1 = @client.execute(api_method: @service.calendar_list.list)

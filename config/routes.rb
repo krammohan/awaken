@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :widgets
   end
 
-  get '/calendars', to: 'users#calendars', as: 'calendars'
+  # get '/calendars', to: 'users#calendars', as: 'calendars'
 
   put 'users/:id/weather' => 'users#change_weather', as: "users_weather"
   put 'users/:id/maps' => 'users#change_maps', as: "users_maps"

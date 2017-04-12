@@ -51,10 +51,10 @@ class UsersController < ApplicationController
     current_user.toggle_news
   end
 
-   def calendars
-        @calendar = see_google_calendar
-        @calendar
-    end
+  def change_calendar
+  	current_user.toggle_calendar
+  end
+
 
 private
 
@@ -83,9 +83,9 @@ private
 		datetime
 	end
 
-	 def see_google_calendar
-        @calendar = GoogleCalWrapper.new(current_user)
-        @calendar.calendar_see(current_user)
-    end
+	# def see_google_calendar
+ #        @calendar = GoogleCalWrapper.configure_client(current_user)
+ #        @calendar.calendar_see(current_user)
+ #    end
 
 end
