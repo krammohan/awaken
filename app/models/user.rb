@@ -76,7 +76,10 @@ class User < ApplicationRecord
       user.email    = "#{auth.uid}@app.com"
       user.username = username
       user.password = Devise.friendly_token[0,20]
+      user.channel = SecureRandom.urlsafe_base64
     end
   end
+
+
 
 end
