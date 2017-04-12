@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410233142) do
+ActiveRecord::Schema.define(version: 20170411213911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20170410233142) do
     t.string   "transit_mode"
     t.boolean  "maps",                   default: false
     t.text     "content",                default: "<div></div>"
+    t.boolean  "news",                   default: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

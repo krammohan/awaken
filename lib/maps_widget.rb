@@ -50,7 +50,15 @@ module MapsWidget
   end
 
   def self.format_transit_info(mode, distance, duration)
-    "<div id='maps-widget' class= 'hidden' style='background-color:rgba(0, 0, 0, 0.7);'><h3 text-align='center' color='white'>Transit</h3><p id='maps'>#{mode} <br> #{distance} <br> #{duration} </p></div>"
+    "<div class='w3-third'>
+      <div class='w3-card-2 w3-container' style='min-height:360px'>
+       <h3>Transit</h3><br>
+        <i class='fa fa-map-marker w3-margin-bottom w3-text-theme' style='font-size:70px'></i>
+        <p>#{mode}</p>
+        <p>It will take you approximately #{duration} to arrive at your destination.</p>
+        <p>Distance: #{distance}</p>
+      </div>
+    </div>"
   end
 
 end
