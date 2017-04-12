@@ -22,15 +22,8 @@ class GoogleCalWrapper
     response1 = @client.execute(api_method: @service.calendar_list.list)
     calendars = JSON.parse(response1.body)
     calendar_id = calendars["items"][0]["id"]
-    # # response2 = @client.execute(api_method: @service.get_list_events(calendar_id))
-    # response2 = @client.execute(api_method: @service.events)
-    # c = JSON.parse(response2.body)
+    response2 = @client.execute(api_method: @service.events.list, parameters: {calendarId: calendar_id})
 
-    # response2 = @client.execute(api_method: @service.events)
-    c = JSON.parse(@service.events)
-    # c = JSON.parse(response2.body)
-      # body: JSON.dump({
-      # items: [calendar_id]}),
-      # headers: {'Content-Type' => 'application/json'})
+    c = JSON.parse(response2.body)
   end
 end
