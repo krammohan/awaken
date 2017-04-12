@@ -118,3 +118,18 @@ D, [2017-04-12T00:21:26.888217 #99310] DEBUG -- Pubnub::Client: Created new Pubn
 D, [2017-04-12T10:32:34.519143 #1262] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
 D, [2017-04-12T10:32:36.600908 #1270] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
 D, [2017-04-12T10:32:56.922595 #1366] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
+D, [2017-04-12T11:04:27.915946 #65237] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
+D, [2017-04-12T11:04:43.336967 #65302] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
+D, [2017-04-12T11:04:48.972202 #65355] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
+D, [2017-04-12T11:26:24.468200 #66156] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
+E, [2017-04-12T11:27:23.682768 #66176] ERROR -- : Couldn't cleanly terminate all actors in 10 seconds!
+D, [2017-04-12T11:27:31.620447 #66237] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
+E, [2017-04-12T11:28:30.844024 #66323] ERROR -- : Couldn't cleanly terminate all actors in 10 seconds!
+D, [2017-04-12T11:28:35.421418 #66348] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
+E, [2017-04-12T11:30:39.602334 #66437] ERROR -- : Couldn't cleanly terminate all actors in 10 seconds!
+D, [2017-04-12T11:30:46.488521 #66501] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
+D, [2017-04-12T11:32:55.866453 #66629] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
+E, [2017-04-12T12:03:55.224095 #66724] ERROR -- : Couldn't cleanly terminate all actors in 10 seconds!
+D, [2017-04-12T12:05:09.814385 #67644] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
+D, [2017-04-12T12:36:30.087489 #69288] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
+D, [2017-04-12T12:36:30.385066 #69291] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19

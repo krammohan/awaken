@@ -1,6 +1,9 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def google_oauth2
+    # p "*"*80
+    # p request.env["omniauth.auth"].credentials.token
+    # p "*"*80
   	login request.env["omniauth.auth"]
   end
 
@@ -9,6 +12,13 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def login auth_hash
 
     @user = User.from_omniauth(auth_hash)
+    @user.access_token = request.env["omniauth.auth"].credentials.token
+    @user.refresh_token = request.env["omniauth.auth"].credentials.request_token
+    @user.save
+
+    p "BLAHLDKFJDSL:KFJDSLF:KJSDF:LKJSDFL:BSDFJKDSFHLKDSJFLFKDSJF"
+    p request.env["omniauth.auth"]
+    p "THIS IS THE END OF THE THING THAT WE ARE TRYAN PRITN"
 
     if @user.persisted?
       sign_in_and_redirect @user, :event => :authentication
