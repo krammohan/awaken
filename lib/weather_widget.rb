@@ -7,7 +7,6 @@ module WeatherWidget
   end
 
   def self.format_weather(data)
-
     "<div class='w3-third'>
       <div class='w3-card-2 w3-container' style='min-height:360px'>
        <h3>Weather</h3><br>
