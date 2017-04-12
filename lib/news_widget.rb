@@ -1,12 +1,25 @@
-module WeatherWidget
-  def self.get_weather(zip)
-    location_hash = ZipCodes.identify(zip)
-    location = "#{location_hash[:city]}, #{location_hash[:state_code]}"
-    response = Weather.lookup_by_location(location, Weather::Units::FAHRENHEIT)
-    format_weather(response)
+module NewsWidget
+  def self.get_news
+    @news = HTTParty.get("https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=48e2978697514242bae24c41c66766ef") 
+    html = format_html(@news)
+    format_news(html)
+
   end
 
-  def self.format_weather(data)
-    "<div id='weather-widget' class= 'hidden' style='background-color:rgba(0, 0, 0, 0.7);'><h3 text-align='center' color='white'>Weather<img id='weather-icon' src='#{data.image.url}' height='60' width='60'></img></h3>#{data.location.city}<br><p id='weather'>#{data.condition.temp}° <br>#{data.condition.text} <br>Wind: #{data.wind.speed}mph <br></p></div>"
+  def self.format_news(data)
+
+    "<div id='news-widget' class= 'hidden'><marquee behavior='scroll' direction='left' >" + data + " </marquee></div>"
   end
+
+  def self.format_html(input)
+    html = ""
+    p input
+    input["articles"].each do |inp|
+
+      html += inp["title"]
+      html += "      |      "
+    end
+    return html
+  end 
 end
+

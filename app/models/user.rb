@@ -1,3 +1,5 @@
+require_relative '../../lib/weather_widget'
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -9,8 +11,10 @@ class User < ApplicationRecord
   end
 
   def construct_widgets
+      puts "I AM INSIDE construct_widgets!!!"
     html_string = ""
     if self.weather
+      puts "I AM INSIDE THE IF STATEMENT!!!!"
       html_string += WeatherWidget.get_weather(self.zip)
     end
 
@@ -19,6 +23,9 @@ class User < ApplicationRecord
     end
 
     if self.news
+      puts "I AM INSIDE THE IF STATEMENT FOR SELF.NEWS!!!"
+      html_string += NewsWidget.get_news
+    end
 
     self.content = html_string
     self.save

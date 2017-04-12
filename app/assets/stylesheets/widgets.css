@@ -67,11 +67,13 @@
 	font-size: 28px;
 }
 
-.news-container{
+#news-widget{
 	color: white; 
-	position: fixed; 
+	position: fixed;
 	bottom: 0; 
+	right: 0;
 	font-size: 30px;
+	width: 100%;
 }
 
 

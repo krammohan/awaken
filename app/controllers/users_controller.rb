@@ -17,6 +17,12 @@ class UsersController < ApplicationController
 			# 		end
 			# end
 
+			p "*"*30
+			p "User information"
+			p current_user
+			p "*"*30
+
+
 			user_job = $scheduler.at(date_time, :user_id => current_user.id) do
 				current_user.construct_widgets
 				# Render something?
@@ -41,14 +47,18 @@ class UsersController < ApplicationController
     current_user.toggle_maps
   end
 
+  def change_news
+    current_user.toggle_news
+  end
+
 private
 
   def user_params
-    params.require(:user).permit(:time, :weather, :zip, :origin_location, :destination_location, :mode, :transit_mode, :maps)
+    params.require(:user).permit(:time, :weather, :zip, :origin_location, :destination_location, :mode, :transit_mode, :maps, :news)
   end
 
 	def pub_nub_job
-		$pubnub.publish( channel: 'my_channel', message: { action: true, url: 'heroku' }) do |envelope|
+		$pubnub.publish( channel: 'my_channel', message: { action: true, url: 'https://awaken-04.herokuapp.com/users/1/widgets' }) do |envelope|
 				puts envelope.status
 			end
 		sleep (10) # CHANGE THIS TIME
@@ -64,8 +74,8 @@ private
 		datetime = ActiveSupport::TimeZone[zone].parse(params[:date] + " " + usertime)
 
 		Time.zone = "Greenwich"
-		datetime.in_time_zone.strftime("%Y-%m-%d %H:%M")
-
+		datetime = datetime.in_time_zone.strftime("%Y-%m-%d %H:%M")
+		datetime
 	end
 
 end
