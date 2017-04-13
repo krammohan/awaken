@@ -11,8 +11,8 @@ class User < ApplicationRecord
     self.find_user auth
   end
 
-  def construct_widgets
-      puts "I AM INSIDE construct_widgets!!!"
+  def construct_widgets(date_time)
+    puts "I AM INSIDE construct_widgets!!!"
     html_string = ""
     if self.weather
       html_string += WeatherWidget.get_weather(self.zip)
@@ -33,7 +33,7 @@ class User < ApplicationRecord
 
     if self.calendar
       puts "I AM INSIDE THE IF STATEMENT FOR SELF.CALENDAR!!!"
-      html_string += CalendarWidget.get_calendar(self)
+      html_string += CalendarWidget.get_calendar(self,date_time)
     end
 
     self.content = html_string
@@ -72,6 +72,10 @@ class User < ApplicationRecord
     self.save
   end
 
+  def set_channel
+    self.channel = SecureRandom.urlsafe_base64
+  end
+
   def toggle_calendar
     if self.calendar
       self.calendar = false
@@ -97,8 +101,8 @@ class User < ApplicationRecord
       user.email    = "#{auth.uid}@app.com"
       user.username = username
       user.password = Devise.friendly_token[0,20]
-    end
   end
+end
 
 
 
