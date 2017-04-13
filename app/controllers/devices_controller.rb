@@ -10,7 +10,7 @@ class DevicesController < ApplicationController
         format.json do
           render json: {
             message: "registered",
-            url: "http://blahtest2.herokuapp.com/users/#{@device.user.id}/widgets",
+            url: "http://awakenapp.herokuapp.com/users/#{@device.user.id}/widgets",
             channel: user_channel
           }.to_json
         end
@@ -20,7 +20,7 @@ class DevicesController < ApplicationController
         format.json do
           render json: {
             message: "not registered",
-            url: "http://blahtest2.herokuapp.com/devices/info/#{@serial}",
+            url: "http://awakenapp.herokuapp.com/devices/info/#{@serial}",
             channel: "generic"
           }.to_json
         end
