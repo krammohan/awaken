@@ -24,7 +24,7 @@ module WeatherWidget
 
   def self.format_weather(data)
     "<div class='w3-third'>
-      <div class='w3-card-2 w3-container' style='min-height:360px; background-color: rgba(0,0,0,.2);'>
+      <div class='w3-card-2 w3-container' style='min-height:360px; background-color: rgba(0,0,0,.3);'>
       <div style='color: white'>
        <h3 style='font-size:30px'>Weather</h3><br>
         #{find_icon(data.condition.text)}
