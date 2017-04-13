@@ -1,6 +1,6 @@
   <nav>
     <div class="nav-wrapper white">
-      <a href="/users/<%=current_user.id%>" class="brand-logo"><img class="responsive-img" id="logo" src="awaken.jpg"/>AWAKEN</a>
+      <a href="/users/<%=current_user.id%>" class="brand-logo"><%= image_tag ""%>AWAKEN</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="#">About</a></li>
         <% if @skip_layout != true %>
@@ -15,7 +15,7 @@
 
 <!-- PARALLAX -->
    <div class="parallax-container">
-    <div class="parallax"><img src="assets/blurrysunset.jpg"></div>
+    <div class="parallax"><%= image_tag "blurrysunset"%></div>
   </div>
   <div class="section white">
     <div class="row container">
@@ -24,7 +24,7 @@
     </div>
   </div>
   <div class="parallax-container">
-    <div class="parallax"><img src="assets/wallup-194397.jpg"></div>
+    <div class="parallax"><%= image_tag "blurrysunset"%></div>
   </div>
 <!-- END -->
 
