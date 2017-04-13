@@ -37,10 +37,9 @@ module CalendarWidget
 
     p "OBJECT" * 30
     data["items"].each do |event|
-        result += "<br>#{event["summary"]}<br>"
+        result += "<br><br>#{event["summary"]}"
         if !(event["start"]["dateTime"] == nil)
-            result += "Start: <br>#{Time.parse(event["start"]["dateTime"]).to_s.split(" ")[1]}"
-            result += "<br>End: #{Time.parse(event["end"]["dateTime"]).to_s.split(" ")[1]}"
+            result += "at <strong>#{Time.parse(event["start"]["dateTime"]).to_s.split(" ")[1]}</strong>"
         end
     end
 
