@@ -1,0 +1,13 @@
+<ol>
+<% @calendar["items"].each do |event| %>
+<li><%= event["summary"] %></li>
+<%if !(event["start"]["dateTime"] == nil)%>
+Start: <li><%= Time.parse(event["start"]["dateTime"]).to_s.split(" ")[1] %></li>
+End: <li><%= Time.parse(event["end"]["dateTime"]).to_s.split(" ")[1] %></li>
+<%end%>
+
+<br>
+<br>
+<br>
+<%end%>
+</ol>
