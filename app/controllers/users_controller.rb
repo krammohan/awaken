@@ -58,19 +58,6 @@ private
   end
 
 	def pub_nub_job
-		p "*" * 50
-		p "*" * 50
-		p "*" * 50
-		p "*" * 50
-		p "*" * 50
-		p "*" * 50
-		p current_user.channel
-		p "*" * 50
-		p "*" * 50
-		p "*" * 50
-		p "*" * 50
-		p "*" * 50
-		p "*" * 50
 
 		$pubnub.publish( channel: current_user.channel, message: { action: true, url: "https://awakenapp.herokuapp.com/users/#{current_user.id}/widgets" }) do |envelope|
 				puts envelope.status
