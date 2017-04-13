@@ -10,7 +10,15 @@ $(document).ready(function() {
       url: url,
       method: "PUT"
     })
+  })
 
+  $("#switch-is-on-2").on("click", function(){
+    var url = $(this).closest("form").attr("action") + "/news"
+   console.log(url)
+    $.ajax({
+      url: url,
+      method: "PUT"
+    })
   })
 
   $("#switch-is-on-1").on("click", function(){
@@ -20,7 +28,6 @@ $(document).ready(function() {
       url: url,
       method: "PUT"
     })
-
   })
 
   function value_() {

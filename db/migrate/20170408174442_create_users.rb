@@ -11,6 +11,8 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.boolean :weather, default: :false
       t.string :zip
       t.boolean :calendar, default:false
+      t.string :channel
+
 
       t.timestamps
     end

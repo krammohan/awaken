@@ -1,6 +1,7 @@
 require_relative '../../lib/weather_widget'
 
 class User < ApplicationRecord
+  has_many :devices
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -77,6 +78,9 @@ class User < ApplicationRecord
     else
       self.calendar = true
     end
+
+  def set_channel
+    self.channel = SecureRandom.urlsafe_base64
     self.save
   end
 
@@ -94,5 +98,7 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]
     end
   end
+
+
 
 end
