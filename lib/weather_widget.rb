@@ -2,7 +2,7 @@ module WeatherWidget
   def self.get_weather(zip)
     location_hash = ZipCodes.identify(zip)
     location = "#{location_hash[:city]}, #{location_hash[:state_code]}"
-    response = Weather.lookup_by_location('location', Weather::Units::FAHRENHEIT)
+    response = Weather.lookup_by_location(zip, Weather::Units::FAHRENHEIT)
     format_weather(response)
   end
 
@@ -33,7 +33,7 @@ module WeatherWidget
         <p>Wind: #{data.wind.speed}mph</p>
       </div>
     </div>"
-  
+
 # <img id="weather-icon" src="#{data.image.url}" height="60" width="60"></img><br>
 #<i class='fa fa-sellsy w3-margin-bottom w3-text-theme' style='font-size:70px'></i>
   end
