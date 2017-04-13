@@ -31,10 +31,10 @@ class User < ApplicationRecord
       html_string += NewsWidget.get_news
     end
 
-    if self.calendar
-      puts "I AM INSIDE THE IF STATEMENT FOR SELF.CALENDAR!!!"
-      html_string += CalendarWidget.get_calendar(self)
-    end
+    # if self.calendar
+    #   puts "I AM INSIDE THE IF STATEMENT FOR SELF.CALENDAR!!!"
+    #   html_string += CalendarWidget.get_calendar(self)
+    # end
 
     self.content = html_string
     self.save
