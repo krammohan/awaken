@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get 'devices/new' => 'devices#new', as: "new_devices"
   post 'devices/create' => 'devices#create'
   get 'devices/info/:id' => 'devices#info'
+  get 'devices/success' => 'devices#success'
 
   put 'users/:id/news' => 'users#change_news', as: "users_news"
 
