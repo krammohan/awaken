@@ -39,3 +39,4 @@ D, [2017-04-12T18:07:52.245800 #80575] DEBUG -- Pubnub::Client: Created new Pubn
 D, [2017-04-12T18:09:12.210214 #80647] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.19
 E, [2017-04-12T18:09:26.614873 #80252] ERROR -- : Couldn't cleanly terminate all actors in 10 seconds!
 >>>>>>> Stashed changes
+D, [2017-04-13T10:47:55.288546 #82854] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.20
