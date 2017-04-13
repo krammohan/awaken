@@ -43,9 +43,11 @@ module CalendarWidget
 
     p "OBJECT" * 30
     data["items"].each do |event|
-        result += "<br><br>#{event["summary"]}"
-        if !(event["start"]["dateTime"] == nil)
-            result += " at #{Time.parse(event["start"]["dateTime"]).strftime("%I:%M %p")}"
+        if (event["start"]["dateTime"] == nil)
+          result += "<br><ul><li>#{event["summary"]}</ul></li>"
+        else
+          result += "<ul><li><br>#{event["summary"]}"
+          result += " at #{Time.parse(event["start"]["dateTime"]).strftime("%I:%M %p")}</ul></li>"
         end
     end
 
