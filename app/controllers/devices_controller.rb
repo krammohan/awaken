@@ -31,6 +31,9 @@ class DevicesController < ApplicationController
 
   def new
     @device = Device.new
+    if !current_user.channel
+      current_user.set_channel
+    end
   end
 
   def create
