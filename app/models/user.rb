@@ -74,6 +74,7 @@ class User < ApplicationRecord
 
   def set_channel
     self.channel = SecureRandom.urlsafe_base64
+  end
 
   def toggle_calendar
     if self.calendar
@@ -81,6 +82,7 @@ class User < ApplicationRecord
     else
       self.calendar = true
     end
+  end
 
   def set_channel
     self.channel = SecureRandom.urlsafe_base64
@@ -99,8 +101,8 @@ class User < ApplicationRecord
       user.email    = "#{auth.uid}@app.com"
       user.username = username
       user.password = Devise.friendly_token[0,20]
-    end
   end
+end
 
 
 
