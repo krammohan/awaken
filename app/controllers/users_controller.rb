@@ -17,19 +17,14 @@ class UsersController < ApplicationController
 			# 		end
 			# end
 
-			p "*"*30
-			p "User information"
-			p current_user
-			p "*"*30
-
-
 			user_job = $scheduler.at(date_time, :user_id => current_user.id) do
-				current_user.construct_widgets
+				current_user.construct_widgets(date_time)
 				# Render something?
 				pub_nub_job
 			end
 
 			p user_job
+			p date_time
 
     respond_to do |format|
         # AlarmQueue.perform_now(current_user.id)
@@ -96,10 +91,5 @@ private
 		datetime = datetime.in_time_zone.strftime("%Y-%m-%d %H:%M")
 		datetime
 	end
-
-	# def see_google_calendar
- #        @calendar = GoogleCalWrapper.configure_client(current_user)
- #        @calendar.calendar_see(current_user)
- #    end
 
 end

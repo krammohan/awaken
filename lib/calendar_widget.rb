@@ -1,7 +1,9 @@
 module CalendarWidget
 
-    def self.get_calendar(current_user)
+    def self.get_calendar(current_user, date_time)
   # def self.configure_client(current_user)
+
+  # Definition of client
     @client = Google::APIClient.new()
 
     @client.authorization.grant_type = 'authorization_code'
@@ -14,17 +16,23 @@ module CalendarWidget
 
     @service =  @client.discovered_api('calendar', 'v3')
 
+    # Get list of all the user's calendars
     response1 = @client.execute(api_method: @service.calendar_list.list)
 
     calendars = JSON.parse(response1.body)
 
+    # Get Calendar Id and date_time
     calendar_id = calendars["items"][0]["id"]
+    date_format_time = self.format_date_time(date_time)
 
-    response2 = @client.execute(api_method: @service.events.list, parameters: {calendarId: calendar_id})
+    # get events from user based on that day
+    response2 = @client.execute(api_method: @service.events.list, parameters: {calendarId: calendar_id, timeMin: date_format_time[0], timeMax: date_format_time[1]})
 
+    # Parse the result
     data = JSON.parse(response2.body)
 
    # self.format_calendar_info(data)
+  #  Formatting it into a string
     result = ""
 
     p "OBJECT" * 30
@@ -43,6 +51,15 @@ module CalendarWidget
         <p>#{result}</p>
       </div>
     </div>"
+  end
+
+
+  def self.format_date_time(date_time)
+    date = date_time.split(" ")
+    date = date[0].split("-")
+    time_min = Time.new(date[0], date[1], date[2]).to_datetime.rfc3339
+    time_max = Time.new(date[0], date[1], (date[2].to_i + 1).to_s).to_datetime.rfc3339
+    [time_min, time_max]
   end
 
    # self.get_calendar(current_user)
