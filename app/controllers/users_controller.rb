@@ -54,7 +54,7 @@ class UsersController < ApplicationController
 private
 
   def user_params
-    params.require(:user).permit(:time, :weather, :zip, :origin_location, :destination_location, :mode, :transit_mode, :maps, :news)
+    params.require(:user).permit(:time, :weather, :zip, :origin_location, :destination_location, :mode, :transit_mode, :maps, :news, :calendar)
   end
 
 	def pub_nub_job
