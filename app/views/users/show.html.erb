@@ -5,7 +5,7 @@ Its Logged in <%= @user.username %>
 <%else %>
 NOT logged in
 <%end %>
-
+<%= audio_tag("AwakenJingle.m4a", autoplay: true) %>
 <%= link_to "Register new device", new_devices_path, class: "waves-effect waves-light btn"%>
 
 <div class="container">
