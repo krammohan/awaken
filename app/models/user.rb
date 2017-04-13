@@ -1,4 +1,7 @@
 require_relative '../../lib/weather_widget'
+require_relative '../../lib/news_widget'
+require_relative '../../lib/maps_widget'
+require_relative '../../lib/calendar_widget'
 
 class User < ApplicationRecord
   has_many :devices
@@ -33,7 +36,7 @@ class User < ApplicationRecord
 
     if self.calendar
       puts "I AM INSIDE THE IF STATEMENT FOR SELF.CALENDAR!!!"
-      html_string += CalendarWidget.get_calendar(self,date_time)
+      html_string += CalendarWidget.get_calendar(self, date_time)
     end
 
     self.content = html_string
