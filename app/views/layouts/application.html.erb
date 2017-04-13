@@ -9,14 +9,9 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
+
 <body>
-  <% if @skip_layout != true %>
-  <%= flash.notice %> 
-  <% if user_signed_in? %>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete ) %>
-  <% end %>
-  <% end %>
-  
+
   <%= yield %>
   
   </body>
