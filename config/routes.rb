@@ -13,10 +13,10 @@ Rails.application.routes.draw do
     resources :widgets
   end
 
-  # get '/calendars', to: 'users#calendars', as: 'calendars'
-
   put 'users/:id/weather' => 'users#change_weather', as: "users_weather"
   put 'users/:id/maps' => 'users#change_maps', as: "users_maps"
+  put 'users/:id/news' => 'users#change_news', as: "users_news"
+  put 'users/:id/calendar' => 'users#change_calendar', as: "users_calendar"
 
   get 'devices/connect/:id' => 'devices#connect'
 
@@ -24,7 +24,5 @@ Rails.application.routes.draw do
   post 'devices/create' => 'devices#create'
   get 'devices/info/:id' => 'devices#info'
   get 'devices/success' => 'devices#success'
-
-  put 'users/:id/news' => 'users#change_news', as: "users_news"
 
 end

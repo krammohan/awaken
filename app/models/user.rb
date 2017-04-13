@@ -85,6 +85,7 @@ class User < ApplicationRecord
     else
       self.calendar = true
     end
+    self.save
   end
 
   def set_channel
