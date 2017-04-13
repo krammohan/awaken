@@ -4,9 +4,9 @@
   left: 0;
   right: 0;
   z-index: -1;
-  
+
   display: block;
-  background-image: url('/assets/city1.jpg');
+  background-image: image-url("city1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -24,7 +24,7 @@
 
 
 #weather-widget {
-	
+
 	color: white;
 	text-align: center;
 	border-radius: 25px;
@@ -41,7 +41,7 @@
 }
 
 #maps-widget {
-	
+
 	color: white;
 	text-align: center;
 	border-radius: 25px;
@@ -85,7 +85,7 @@
 #news-widget{
 	color: white; 
 	position: fixed;
-	bottom: 17%; 
+	bottom: 17%;
 	right: 0;
 	font-size: 30px;
 	width: 100%;
@@ -107,7 +107,7 @@ clock{
     font: 130px  Lato, sans-serif;
     top: 20vw;
   }
-  
+
 }
 
 footer {
@@ -128,9 +128,3 @@ footer {
 	font-size: 60px;
 	font-weight: bold;
 }
-
-
-
-
-
-
