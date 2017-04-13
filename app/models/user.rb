@@ -33,7 +33,7 @@ class User < ApplicationRecord
 
     if self.calendar
       puts "I AM INSIDE THE IF STATEMENT FOR SELF.CALENDAR!!!"
-      html_string += CalendarWidget.get_calendar(self,date_time)
+      html_string += CalendarWidget.get_calendar(date_time)
     end
 
     self.content = html_string
