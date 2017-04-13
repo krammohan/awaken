@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   # get '/calendars', to: 'users#calendars', as: 'calendars'
 
   put 'users/:id/weather' => 'users#change_weather', as: "users_weather"
+  
   put 'users/:id/maps' => 'users#change_maps', as: "users_maps"
 
   get 'devices/connect/:id' => 'devices#connect'
@@ -25,5 +26,7 @@ Rails.application.routes.draw do
   get 'devices/info/:id' => 'devices#info'
 
   put 'users/:id/news' => 'users#change_news', as: "users_news"
+
+  put 'users/:id/calendar' => 'users#change_calendar', as: "users_calendar"
 
 end

@@ -12,6 +12,15 @@ $(document).ready(function() {
     })
   })
 
+  $("#switch-is-on-1").on("click", function(){
+    var url = $(this).closest("form").attr("action") + "/maps"
+   console.log(url)
+    $.ajax({
+      url: url,
+      method: "PUT"
+    })
+  })
+
   $("#switch-is-on-2").on("click", function(){
     var url = $(this).closest("form").attr("action") + "/news"
    console.log(url)
@@ -21,8 +30,8 @@ $(document).ready(function() {
     })
   })
 
-  $("#switch-is-on-1").on("click", function(){
-    var url = $(this).closest("form").attr("action") + "/maps"
+  $("#switch-is-on-3").on("click", function(){
+    var url = $(this).closest("form").attr("action") + "/calendar"
    console.log(url)
     $.ajax({
       url: url,

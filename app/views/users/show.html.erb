@@ -1,5 +1,5 @@
   <nav>
-    <div class="nav-wrapper black">
+    <div class="nav-wrapper white">
       <a href="/users/<%=current_user.id%>" class="brand-logo"><img class="responsive-img" id="logo" src="awaken.jpg"/>AWAKEN</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="#">About</a></li>
@@ -13,6 +13,20 @@
     </div>
   </nav>
 
+<!-- PARALLAX -->
+   <div class="parallax-container">
+    <div class="parallax"><img src="assets/blurrysunset.jpg"></div>
+  </div>
+  <div class="section white">
+    <div class="row container">
+      <h2 class="header">Parallax</h2>
+      <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+    </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="assets/wallup-194397.jpg"></div>
+  </div>
+<!-- END -->
 
 <div class="container">
  <div class="row">
@@ -116,7 +130,7 @@
 
 
  <div class="row">
- <div class="col s12 m6">
+  <div class="col s12 m6">
    <div class="card grey darken-1">
      <div class="card-content white-text">
        <span class="card-title">News</span>
@@ -142,6 +156,36 @@
      </div>
    </div>
  </div>
+
+
+<div class="row">
+ <div class="col s12 m6">
+   <div class="card grey darken-1">
+     <div class="card-content white-text">
+       <span class="card-title">Agenda</span>
+       <p>
+         Blah blah agenda blahhhhhhhhh
+       </p><br>
+     </div>
+     <div class="card-action">
+       <% if @user.calendar %>
+       <div class="switch" unchecked><label>Off<input name="user[calendar]" id="switch-is-on-3" type="checkbox" checked><span class="lever"></span>On</label>
+       </div>
+       <br>
+       <% else %>
+       <div class="switch">
+         <label>
+           Off
+           <input type="checkbox" id="mycheckbox" name="user[calendar]">
+           <span class="lever"></span>
+           On
+         </label>
+       </div>
+       <% end %>
+     </div>
+   </div>
+ </div>
+
 
 
 
