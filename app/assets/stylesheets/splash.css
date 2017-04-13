@@ -12,17 +12,20 @@
 
 #headerone {
   position: relative;
-  background-image: url("/assets/sunrise2.jpg");
+  background-image: url("/assets/DV_Layers-X2.jpg");
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
   color: #fff;
   text-align: center;
-  padding: 7.5em 0 2em 0;
+  padding: 9em 0 2em 0;
   cursor: default;
 }
 
-
+.logo {
+  width: 25%;
+  height: 25%;
+}
 
 .homepage #headerone {
   height: 100vh;

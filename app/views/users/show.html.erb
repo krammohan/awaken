@@ -1,36 +1,44 @@
-  <nav>
-    <div class="nav-wrapper white">
-      <a href="/users/<%=current_user.id%>" class="brand-logo"><%= image_tag ""%>AWAKEN</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
         <li><a href="#">About</a></li>
         <% if @skip_layout != true %>
           <% if user_signed_in? %>
             <li><%= link_to('Logout', destroy_user_session_path, :method => :delete ) %></li>
           <% end %>
         <% end %>
-        <li><%= link_to "Register new device", new_devices_path, class: "waves-effect waves-light btn"%><li>
       </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons"></i></a>
     </div>
   </nav>
 
-<!-- PARALLAX -->
-   <div class="parallax-container">
-    <div class="parallax"><%= image_tag "blurrysunset"%></div>
-  </div>
-  <div class="section white">
-    <div class="row container">
-      <h2 class="header">Parallax</h2>
-      <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h3 class="header center white-text">Set Your Alarm</h3>
+        <div class="row center">
+          <h5 class="header col s12 light">Toggle on the information you'd like to wake up to</h5>
+        </div>
+        <div class="row center">
+          <%= link_to "Register new device", new_devices_path, class: "btn-large waves-effect waves-light teal lighten-1"%>
+        </div>
+        <br>
+      </div>
     </div>
+    <div class="parallax"><%= image_tag "StockSnap_1"%></div>
   </div>
-  <div class="parallax-container">
-    <div class="parallax"><%= image_tag "blurrysunset"%></div>
-  </div>
-<!-- END -->
+
 
 <div class="container">
  <div class="row">
-   <h3 class="col s12">Preferences</h3>
    <form class="col s12" action="/users/<%=current_user.id%>" method="POST">
      <input type="hidden" name="_method" value="PUT">
      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
