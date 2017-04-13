@@ -24,6 +24,7 @@ class UsersController < ApplicationController
 			end
 
 			p user_job
+			p date_time
 
     respond_to do |format|
         # AlarmQueue.perform_now(current_user.id)
@@ -76,10 +77,5 @@ private
 		datetime = datetime.in_time_zone.strftime("%Y-%m-%d %H:%M")
 		datetime
 	end
-
-	# def see_google_calendar
- #        @calendar = GoogleCalWrapper.configure_client(current_user)
- #        @calendar.calendar_see(current_user)
- #    end
 
 end
