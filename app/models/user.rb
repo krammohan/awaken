@@ -72,17 +72,18 @@ class User < ApplicationRecord
     self.save
   end
 
-<<<<<<< HEAD
   def set_channel
     self.channel = SecureRandom.urlsafe_base64
-=======
+
   def toggle_calendar
     if self.calendar
       self.calendar = false
     else
       self.calendar = true
     end
->>>>>>> 5a7993e653c9c2300465fb302554e2ede92bf325
+
+  def set_channel
+    self.channel = SecureRandom.urlsafe_base64
     self.save
   end
 
