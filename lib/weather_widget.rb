@@ -9,7 +9,7 @@ module WeatherWidget
   def self.find_icon(condition)
     if condition == "Sunny" || condition == "Clear"
       icon = "<i class='fa fa-sun-o' w3-margin-bottom w3-text-theme' style='font-size:70px'></i>"
-    elsif condition == "Rainy"
+    elsif condition == "Rainy" || condition == "Showers"
       icon = "<i class='fa fa-tint' aria-hidden='true' w3-margin-bottom w3-text-theme style='font-size:70px'></i>"
     elsif condition == "Thunderstorms"
       icon = "<i class='fa fa-bolt' aria-hidden='true' w3-margin-bottom w3-text-theme style='font-size:70px'></i> "
