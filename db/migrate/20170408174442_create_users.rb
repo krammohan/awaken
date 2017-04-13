@@ -7,10 +7,12 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :provider
       t.string :access_token
       t.string :refresh_token
-      t.time :time
+      t.time   :time
       t.boolean :weather, default: :false
       t.string :zip
+      t.boolean :calendar, default:false
       t.string :channel
+
 
       t.timestamps
     end

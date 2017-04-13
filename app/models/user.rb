@@ -31,6 +31,11 @@ class User < ApplicationRecord
       html_string += NewsWidget.get_news
     end
 
+    if self.calendar
+      puts "I AM INSIDE THE IF STATEMENT FOR SELF.CALENDAR!!!"
+      html_string += CalendarWidget.get_calendar(self)
+    end
+
     self.content = html_string
     self.save
   end
@@ -66,6 +71,13 @@ class User < ApplicationRecord
     end
     self.save
   end
+
+  def toggle_calendar
+    if self.calendar
+      self.calendar = false
+    else
+      self.calendar = true
+    end
 
   def set_channel
     self.channel = SecureRandom.urlsafe_base64

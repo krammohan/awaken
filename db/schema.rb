@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170412023226) do
     t.time     "time"
     t.boolean  "weather",                default: false
     t.string   "zip"
+    t.boolean  "calendar",               default: false
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
     t.string   "email",                  default: "",            null: false

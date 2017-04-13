@@ -51,6 +51,11 @@ class UsersController < ApplicationController
     current_user.toggle_news
   end
 
+  def change_calendar
+  	current_user.toggle_calendar
+  end
+
+
 private
 
   def user_params
@@ -77,5 +82,10 @@ private
 		datetime = datetime.in_time_zone.strftime("%Y-%m-%d %H:%M")
 		datetime
 	end
+
+	# def see_google_calendar
+ #        @calendar = GoogleCalWrapper.configure_client(current_user)
+ #        @calendar.calendar_see(current_user)
+ #    end
 
 end
