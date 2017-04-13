@@ -1,7 +1,9 @@
 module CalendarWidget
 
-  def self.configure_client(current_user)
+    def self.get_calendar(current_user)
+  # def self.configure_client(current_user)
     @client = Google::APIClient.new()
+
     @client.authorization.grant_type = 'authorization_code'
     @client.authorization.code = '4/Z4GdlXlf2vK_dp04p16Kb_2p8WEtIilpFf9dlSCAXSg'
     @client.authorization.access_token = current_user.access_token
@@ -9,22 +11,23 @@ module CalendarWidget
     @client.authorization.client_id = ENV['GOOGLE_CLIENT_ID']
     @client.authorization.client_secret = ENV['GOOGLE_CLIENT_SECRET']
     @client.authorization.refresh_token
-    @service = @client.discovered_api('calendar', 'v3')
-  end
 
-  def self.calendar_see(client)
-    # @service =  client.discovered_api('calendar', 'v3')
-    response1 = client.execute(api_method: @service.calendar_list.list)
+    @service =  @client.discovered_api('calendar', 'v3')
+
+    response1 = @client.execute(api_method: @service.calendar_list.list)
+
     calendars = JSON.parse(response1.body)
+
     calendar_id = calendars["items"][0]["id"]
-    response2 = client.execute(api_method: @service.events.list, parameters: {calendarId: calendar_id})
 
-    cal_info = JSON.parse(response2.body)
+    response2 = @client.execute(api_method: @service.events.list, parameters: {calendarId: calendar_id})
 
-  end
+    data = JSON.parse(response2.body)
 
-  def self.format_calendar_info(data)
+   # self.format_calendar_info(data)
     result = ""
+
+    p "OBJECT" * 30
     data["items"].each do |event|
         result += "<br>#{event["summary"]}<br>"
         if !(event["start"]["dateTime"] == nil)
@@ -42,10 +45,6 @@ module CalendarWidget
     </div>"
   end
 
-    def self.get_calendar(current_user)
-        @calendar = GoogleCalWrapper.configure_client(current_user)
-        cal_info = calendar_see(@calendar)
-        format_calendar_info(cal_info)
-    end
+   # self.get_calendar(current_user)
 
 end
