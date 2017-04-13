@@ -47,7 +47,7 @@ module CalendarWidget
     "<div class='w3-third'>
       <div class='w3-card-2 w3-container' style='min-height:360px'>
        <h3>Today's Tasks</h3><br>
-        <i class='fa fa-map-marker w3-margin-bottom w3-text-theme' style='font-size:70px'></i>
+        <i class='fa fa-calendar w3-margin-bottom w3-text-theme' style='font-size:70px'></i>
         <p>#{result}</p>
       </div>
     </div>"
