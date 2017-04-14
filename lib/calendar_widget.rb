@@ -42,14 +42,16 @@ module CalendarWidget
     result = ""
 
     p "OBJECT" * 30
+    result += "<ul>"
     data["items"].each do |event|
         if (event["start"]["dateTime"] == nil)
-          result += "<br><ul><li>#{event["summary"]}</ul></li>"
+          result += "<br><li>#{event["summary"]}</ul></li>"
         else
-          result += "<ul><li><br>#{event["summary"]}"
-          result += " at #{Time.parse(event["start"]["dateTime"]).strftime("%I:%M %p")}</ul></li>"
+          result += "<li>#{event["summary"]}"
+          result += " at #{Time.parse(event["start"]["dateTime"]).strftime("%I:%M %p")}</li><br>"
         end
     end
+    result += "</ul>"
 
     "<div class='w3-third'>
       <div class='w3-card-2 w3-container' style='min-height:360px; background-color: rgba(0,0,0,.3);'>
