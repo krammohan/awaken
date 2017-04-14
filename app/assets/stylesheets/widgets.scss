@@ -1,15 +1,32 @@
-#stuff {
-	/*background: image-url('/app/assets/images/morning.jpeg') no-repeat;*/
-	background-image: url('/assets/morning.jpg');
-	background-repeat:no-repeat;
-	background-size:cover;
-	background-attachment: fixed;
-	background-position:center center;
+#content:before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  display: block;
+
+  background-image: image-url("smallcity.png");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center center;
+
+	-webkit-filter: blur(3px);
+	  -moz-filter: blur(3px);
+	  -o-filter: blur(3px);
+	  -ms-filter: blur(3px);
+	  filter: blur(3px);
 }
 
 
+
 #weather-widget {
-	
+
 	color: white;
 	text-align: center;
 	border-radius: 25px;
@@ -26,7 +43,7 @@
 }
 
 #maps-widget {
-	
+
 	color: white;
 	text-align: center;
 	border-radius: 25px;
@@ -47,7 +64,7 @@
 	color: white;
 	font-family: "Roboto", monospace;
 	font-weight: 300;
-	font-size: 20px;
+	font-size: 25px;
 }
 
 #maps{
@@ -56,7 +73,7 @@
 	color: white;
 	font-family: "Roboto", monospace;
 	font-weight: 300;
-	font-size: 20px;
+	font-size: 25px;
 }
 
 .widget-bold{
@@ -64,13 +81,13 @@
 	color: white;
 	font-family: "Roboto", monospace;
 	font-weight: 300;
-	font-size: 28px;
+	font-size: 25px;
 }
 
 #news-widget{
-	color: white; 
+	color: white;
 	position: fixed;
-	bottom: 0; 
+	bottom: 17%;
 	right: 0;
 	font-size: 30px;
 	width: 100%;
@@ -92,13 +109,37 @@ clock{
     font: 130px  Lato, sans-serif;
     top: 20vw;
   }
-  
+
+}
+
+.footershow {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+
+.all-widgets {
+	margin-top: 6%;
+}
+
+.title {
+	font-size: 60px;
+	font-weight: bold;
 }
 
 
-
-
-
-
-
-
+.tv-style{
+  color: white;
+  text-align: center;
+  padding: 20px;
+  vertical-align: middle;
+  background: darkgray;
+  width: 25vw;
+  height: 20vw;
+  margin: 0 auto;
+  width: 80%;
+}

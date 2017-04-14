@@ -7,7 +7,7 @@ module CalendarWidget
     @client = Google::APIClient.new()
 
     @client.authorization.grant_type = 'authorization_code'
-    @client.authorization.code = '4/Z4GdlXlf2vK_dp04p16Kb_2p8WEtIilpFf9dlSCAXSg'
+    @client.authorization.code = $code_for_cal
     @client.authorization.access_token = current_user.access_token
     @client.authorization.refresh_token = current_user.refresh_token
     @client.authorization.client_id = ENV['GOOGLE_CLIENT_ID']
@@ -20,9 +20,15 @@ module CalendarWidget
     response1 = @client.execute(api_method: @service.calendar_list.list)
 
     calendars = JSON.parse(response1.body)
+    p "*" * 30
+    p calendars
+    p "*" * 30
 
     # Get Calendar Id and date_time
     calendar_id = calendars["items"][0]["id"]
+    p "*" * 30
+    p calendar_id
+    p "*" * 30
     date_format_time = self.format_date_time(date_time)
 
     # get events from user based on that day
@@ -36,19 +42,24 @@ module CalendarWidget
     result = ""
 
     p "OBJECT" * 30
+    result += "<ul>"
     data["items"].each do |event|
-        result += "<br>#{event["summary"]}<br>"
-        if !(event["start"]["dateTime"] == nil)
-            result += "Start: <br>#{Time.parse(event["start"]["dateTime"]).to_s.split(" ")[1]}"
-            result += "<br>End: #{Time.parse(event["end"]["dateTime"]).to_s.split(" ")[1]}"
+        if (event["start"]["dateTime"] == nil)
+          result += "<br><li>#{event["summary"]}</ul></li>"
+        else
+          result += "<li>#{event["summary"]}"
+          result += " at #{Time.parse(event["start"]["dateTime"]).strftime("%I:%M %p")}</li><br>"
         end
     end
+    result += "</ul>"
 
     "<div class='w3-third'>
-      <div class='w3-card-2 w3-container' style='min-height:360px'>
-       <h3>Today's Tasks</h3><br>
+      <div class='w3-card-2 w3-container' style='min-height:360px; background-color: rgba(0,0,0,.4);'>
+      <div style='color: white'>
+       <h3 style='font-size:30px'>Today's Tasks</h3><br>
         <i class='fa fa-calendar w3-margin-bottom w3-text-theme' style='font-size:70px'></i>
-        <p>#{result}</p>
+        <p style='font-size:20px'>#{result}</p>
+      </div>
       </div>
     </div>"
   end
