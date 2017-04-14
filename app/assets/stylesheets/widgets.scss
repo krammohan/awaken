@@ -6,7 +6,9 @@
   z-index: -1;
 
   display: block;
+
   background-image: image-url("smallcity.png");
+
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -83,7 +85,7 @@
 }
 
 #news-widget{
-	color: white; 
+	color: white;
 	position: fixed;
 	bottom: 17%;
 	right: 0;
@@ -141,6 +143,3 @@ footer {
   margin: 0 auto;
   width: 80%;
 }
-
-
-

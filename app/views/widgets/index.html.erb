@@ -10,7 +10,6 @@
 
 <header class="w3-container w3-padding">
 
-<%= audio_tag("AwakenJingle_demo.mp3", autoplay: true) %>
 
   <div class="w3-center">
   <h4>"<%= @quotes_list.sample.upcase %>"</h4>
@@ -39,4 +38,5 @@
     <p><%= Date.today.strftime("%A, %b %d, %Y").upcase %></p>
   </div>
 </footer>
+<%= audio_tag("AwakenJingle_demo.mp3", autoplay: true) %>
 </body>
