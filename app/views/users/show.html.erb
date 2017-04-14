@@ -1,152 +1,142 @@
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container" id="picture-text">
+        <br><br>
+        <h3 class="header center white-text">Set Your Alarm</h3>
+        <div class="row center">
+          <h5 class="header col s12 light">Toggle on the information you'd like to wake up to</h5>
+        </div>
+        <div class="row center">
+          <%= link_to "Register new device", new_devices_path, class: "btn-large waves-effect waves-light teal lighten-1"%>
+        </div>
+        <br>
+      </div>
+    </div>
+    <div class="parallax"><%= image_tag "StockSnap_clouds"%></div>
+  </div>
 
 
-<% if @user %>
-Its Logged in <%= @user.username %>
-<%else %>
-NOT logged in
-<%end %>
+<div class="container" id="form-container">
 
-<%= link_to "Register new device", new_devices_path, class: "waves-effect waves-light btn"%>
 
-<div class="container">
- <div class="row">
-   <h2 class="col s12">Set Your Alarm</h2>
+ <br>
    <form class="col s12" action="/users/<%=current_user.id%>" method="POST">
      <input type="hidden" name="_method" value="PUT">
      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
-     <div class="row">
-       <div class="input-field col s12">
-         <label for="input_date">Date</label>
-         <input id="input_date" class="datepicker" type="date" name="date">
-       </div>
-     </div>
+     <br>
+     <div class="row" id="widgets">
+       <div class="card grey darken-1">
+         <div class="card-content white-text">
+           <span class="card-title">Maps</span>
+             <p>
+              Get real-time transit information for your daily commute to make sure you're on time.
+              </p><br>
+            <input type="text" placeholder="your address" name="user[origin_location]">
+            <input type="text" placeholder="your destination" name="user[destination_location]">
+            <br>
 
-     <div class="row">
-       <div class="input-field col s12">
-         <label for="input_endtime">Time</label><br />
-         <input id="input_endtime" class="timepicker" type="time" name="user[time]">
-       </div>
-     </div>
-     <br />
+            <label>Select your mode of transportation</label>
+            <select name="user[mode]">
+              <option value="" disabled selected>Choose your option</option>
+              <option value="car">car</option>
+              <option value="public transit">public transit</option>
+              <option value="bicycle">bicycle</option>
+            </select>
+            <br>
+            <label>If public transit, choose your preferred type</label>
+            <select name="user[transit_mode]">
+              <option value="" disabled selected>Choose your option</option>
+              <option value="bus">bus</option>
+              <option value="muni">muni</option>
+              <option value="bart">bart</option>
+            </select>
+          </div>
 
-     <div class="row">
-      <div class="col s12 m6">
-       <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-         <span class="card-title">Maps</span>
-         <p>
-          Blah blah directions blahhhhhhhhh
-        </p><br>
-        <input type="text" placeholder="your address" name="user[origin_location]">
-        <input type="text" placeholder="your destination" name="user[destination_location]">
-        <br>
-
-        <label>Select your mode of transportation</label>
-        <select name="user[mode]">
-          <option value="" disabled selected>Choose your option</option>
-          <option value="car">car</option>
-          <option value="public transit">public transit</option>
-          <option value="bicycle">bicycle</option>
-        </select>
-        <br>
-        <label>If public transit, choose your preferred type</label>
-        <select name="user[transit_mode]">
-          <option value="" disabled selected>Choose your option</option>
-          <option value="bus">bus</option>
-          <option value="muni">muni</option>
-          <option value="bart">bart</option>
-        </select>
+          <div class="card-action">
+          <% if @user.maps %>
+            <div class="switch" unchecked><label>Off<input name="user[maps]" id="switch-is-on-1" type="checkbox" checked><span class="lever"></span>On</label>
+            </div>
+          <br>
+          <% else %>
+            <div class="switch">
+              <label>
+              Off
+              <input type="checkbox" id="mycheckbox" name="user[maps]">
+              <span class="lever"></span>
+              On
+              </label>
+            </div>
+          <% end %>
+          </div>
       </div>
 
-      <div class="card-action">
-       <% if @user.maps %>
-       <div class="switch" unchecked><label>Off<input name="user[maps]" id="switch-is-on-1" type="checkbox" checked><span class="lever"></span>On</label>
-       </div>
-       <br>
-       <% else %>
-       <div class="switch">
-         <label>
-          Off
-          <input type="checkbox" id="mycheckbox" name="user[maps]">
-          <span class="lever"></span>
-          On
-        </label>
-      </div>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-<div class="row">
- <div class="col s12 m6">
-   <div class="card blue-grey darken-1">
+<div id="three-widgets">
+ <div class="col s4" id="heightsame">
+   <div class="card grey darken-1">
      <div class="card-content white-text">
        <span class="card-title">Weather</span>
-       <p>
-         Blah blah weather blahhhhhhhhh
-       </p><br>
-       <input type="text" placeholder="zip code" name="user[zip]">
+         <p>
+           View the current weather to help you decide what to wear before you get out of bed.<br><br>
+         </p><br>
+        <input type="text" placeholder="zip code" name="user[zip]">
+      </div>
+      <div class="card-action">
+        <% if @user.weather %>
+          <div class="switch" unchecked><label>Off<input name="user[weather]" id="switch-is-on" type="checkbox" checked><span class="lever"></span>On</label>
+          </div>
+          <br>
+        <% else %>
+          <div class="switch">
+            <label>
+             Off
+             <input type="checkbox" id="mycheckbox" name="user[weather]">
+             <span class="lever"></span>
+             On
+            </label>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
-     </div>
-     <div class="card-action">
-       <% if @user.weather %>
-       <div class="switch" unchecked><label>Off<input name="user[weather]" id="switch-is-on" type="checkbox" checked><span class="lever"></span>On</label>
-       </div>
-       <br>
-       <% else %>
-       <div class="switch">
-         <label>
-           Off
-           <input type="checkbox" id="mycheckbox" name="user[weather]">
-           <span class="lever"></span>
-           On
-         </label>
-       </div>
-       <% end %>
-     </div>
-   </div>
- </div>
 
-
- <div class="row">
- <div class="col s12 m6">
-   <div class="card blue-grey darken-1">
+ <div class="col s4" id="heightsame">
+   <div class="card grey darken-1">
      <div class="card-content white-text">
        <span class="card-title">News</span>
-       <p>
-         Blah blah current news blahhhhhhhhh
-       </p><br>
+         <p>
+           Up-to-date news headlines delivered straight to your television screen.<br><br><br><br>
+         </p><br>
      </div>
-     <div class="card-action">
-       <% if @user.news %>
-       <div class="switch" unchecked><label>Off<input name="user[news]" id="switch-is-on-2" type="checkbox" checked><span class="lever"></span>On</label>
-       </div>
-       <br>
-       <% else %>
-       <div class="switch">
+      <div class="card-action">
+        <% if @user.news %>
+        <div class="switch" unchecked><label>Off<input name="user[news]" id="switch-is-on-2" type="checkbox" checked><span class="lever"></span>On</label>
+        </div>
+        <br>
+        <% else %>
+        <div class="switch">
          <label>
            Off
            <input type="checkbox" id="mycheckbox" name="user[news]">
            <span class="lever"></span>
            On
          </label>
-       </div>
+        </div>
        <% end %>
-     </div>
-   </div>
- </div>
+      </div>
+    </div>
+  </div>
 
 
- <div class="row">
- <div class="col s12 m6">
-   <div class="card blue-grey darken-1">
-     <div class="card-content white-text">
-        <span class="card-title">Agenda</span>
-           <p>
-             Blah blah agenda blahhhhhhhhh
-           </p><br>
-         </div>
+  <div class="col s4" id="heightsame">
+    <div class="card grey darken-1">
+      <div class="card-content white-text">
+          <span class="card-title">Agenda</span>
+             <p>
+               Get a head-start on planning your day by viewing your to-do list.<br><br><br><br>
+             </p><br>
+        </div>
          <div class="card-action">
            <% if @user.calendar %>
            <div class="switch" unchecked><label>Off<input name="user[calendar]" id="switch-is-on-3" type="checkbox" checked><span class="lever"></span>On</label>
@@ -160,18 +150,105 @@ NOT logged in
               <span class="lever"></span>
               On
             </label>
-          </div>
-        <% end %>
-     </div>
-   </div>
- </div>
-
-
-
+           </div>
+           <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
-<input class="waves-effect waves-light btn-large" type="submit" onclick="value_()">
+  <br><br>
+     <div class="row">
+       <div class="input-field col s12">
+         <label for="input_date">Date</label>
+         <input id="input_date" class="datepicker" type="date" name="date">
+       </div>
+     </div>
 
+     <div class="row">
+       <div class="input-field col s12">
+         <label for="input_endtime">Time</label><br />
+         <input id="input_endtime" class="timepicker" type="time" name="user[time]">
+       </div>
+     </div>
+  <br>
+
+<input class="waves-effect waves-light btn-large" type="submit" onclick="value_()">
+<br><br>
 </form>
 </div>
 </div>
+
+
+
+   <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        
+        <br>
+      </div>
+    </div>
+    <div class="parallax"><%= image_tag "StockSnap_1"%></div>
+  </div>
+
+<!-- WHITE SPACE -->
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <br>
+          <h4>What's included?</h4>
+          <p class="center-align light">
+          Everything you see below. More features coming soon.</p>
+          <p>Alarm Clock <br> Google Calendar <br> Google Maps <br> Current News</p>
+          <br>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+<!-- FOOTER -->
+  <footer class="page-footer grey darken-1">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4"> Awaken attempts to make the unpleasant experience of waking up every morning more enjoyable. We are a group of five full-stack web developers who are passionate about working with technologies like the Raspberry Pi and Ruby on Rails. We welcome any questions or comments about our project. We hope your mornings are made a little better by Awaken.</p>
+
+
+        </div>
+        <div class="col l3 s12 center-align">
+          <h5 class="white-text">The Team</h5>
+          <p class="white-text">Find us on GitHub:</p>
+          <ul>
+            <li><a class="white-text" href="https://github.com/asmarshall">Angela</a></li>
+            <li><a class="white-text" href="https://github.com/krammohan">Kavya</a></li>
+            <li><a class="white-text" href="https://github.com/marcelaporto">Marcela</a></li>
+            <li><a class="white-text" href="https://github.com/radiohegel">Roger</a></li>
+            <li><a class="white-text" href="https://github.com/antoniosaric">Tony</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <br><br><br>
+          
+          <% if user_signed_in? %>
+            <a href="/users/sign_out" data-method="delete" class="waves-effect waves-light btn-large"><i class="material-icons left">power_settings_new</i>Logout</a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container center-align">
+      Copyright © 2017 AWAKEN
+      </div>
+    </div>
+  </footer>
