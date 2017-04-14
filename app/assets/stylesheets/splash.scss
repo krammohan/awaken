@@ -12,7 +12,7 @@
 
 #headerone {
   position: relative;
-  background-image: image-url("sunrise2.jpg");
+  background-image: url("/assets/DV_Layers-X2.jpg");
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -56,3 +56,9 @@
 .homepage.is-loading #headerone:after {
   opacity: 1;
 }
+
+.logo {
+  width: 25%;
+  height: 25%;
+}
+

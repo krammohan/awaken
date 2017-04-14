@@ -2,16 +2,21 @@
 <body class="homepage">
   <div id="headerone">
     <header>
-      <h1>Awaken</h1>
-      <%= link_to "Login", user_omniauth_authorize_path(:google_oauth2), class: "waves-effect waves-light btn"%>
+        <%= image_tag "awaken", class: "logo"%>
+        <h4>Say Good Morning with AWAKEN</h4>
+        <div class="row center">
+          <h6 class="header col s12 light">Displaying the information you need to start your day off right</h6>
+        </div>
+        <br><br>
+        <%= link_to "Login With Google", user_omniauth_authorize_path(:google_oauth2), class: "btn-large waves-effect waves-light teal lighten-1"%>
     </header>
   </div>
   <!-- Copyright -->
-  <center>
+<!--   <center>
     <div class="copyright">
       <ul class="menu">
         <li>&copy; All rights reserved.</li><li>Design By: Marcela, Angela, Roger, Kavya and Tony</li>
       </ul>
     </div>
-  </center>
+  </center> -->
   </body>
