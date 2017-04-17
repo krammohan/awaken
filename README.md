@@ -1,24 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Awaken attempts to make the unpleasant experience of waking up every morning more enjoyable. We are a group of five full-stack web developers who are passionate about working with technologies like the Raspberry Pi and Ruby on Rails. We hope your mornings are made a little better by Awaken.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**Getting Started**
+This project is deployed (on heroku)[http://awakenapp.herokuapp.com/].
