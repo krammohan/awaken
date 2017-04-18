@@ -11,14 +11,17 @@ This project is deployed [on Heroku](http://awakenapp.herokuapp.com/) for your p
 
 ## Site
 ### Landing Page
+
   ![](https://github.com/krammohan/awaken/blob/master/landing-page.png)
   
 ### User Preferences Page
 This is the page a user will see once they have logged in to the app using their Google account. For the Google login functionality, we utilized Google OAuth and the Ruby Devise gem. 
+
   ![](https://github.com/krammohan/awaken/blob/master/preferences-page.png)
   
 ### Widgets Page
 Based on which widgets a user has selected on the user preferences page and which time and day they have set their alarm for, the Raspberry Pi will display a personalized widgets page.
+
   ![](https://github.com/krammohan/awaken/blob/master/widgets-page.png)
 
 ## Built With
