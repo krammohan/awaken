@@ -9,7 +9,7 @@ A background job scheduler (ActiveJob) was used to listen to the time set by the
 ## Demo
 This project is deployed [on Heroku](http://awakenapp.herokuapp.com/) for your perusal.
 
-## Site
+## Web App
 ### Landing Page
 
   ![](https://github.com/krammohan/awaken/blob/master/landing-page.png)
