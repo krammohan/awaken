@@ -1,4 +1,4 @@
-# README
+![Awaken](https://github.com/krammohan/awaken/blob/master/awaken.png)
 
 Awaken attempts to make the unpleasant experience of waking up every morning more enjoyable. Our Ruby on Rails web app onboards a user and allows them to set preferences and a date/time for when they want to be woken up. 
 
