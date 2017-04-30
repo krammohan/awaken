@@ -22,7 +22,7 @@ This is the page a user will see once they have logged in to the app using their
 ### Widgets Page
 Based on which widgets a user has selected on the user preferences page and which time and day they have set their alarm for, the Raspberry Pi will display a personalized widgets page.
 
-  ![](https://github.com/krammohan/awaken/blob/master/widgets-page.png)
+  ![](https://github.com/krammohan/awaken/blob/master/widget-page.png)
 
 ## Built With
 - Ruby on Rails
